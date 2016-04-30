@@ -69,7 +69,6 @@ class HipChatStringParserFetchingUrlLinksTests: XCTestCase {
     // MARK: - Test for Atlassian test cases
     
     func testPageTitleFetchingWithAtlassianTestCase3() {
-        
         let inputString = "http://www.nbcolympics.com/"
         let url = NSURL(string: inputString)
         let expectedResult = "2016 Rio Olympic Games | NBC Olympics"
@@ -97,6 +96,31 @@ class HipChatStringParserFetchingUrlLinksTests: XCTestCase {
     }
     
     func testPageTitleFetchingWithAtlassianTestCase4() {
+        let inputString = "https://twitter.com/jdorfman/status/430511497475670016"
+        let url = NSURL(string: inputString)
+        let expectedResult = "Justin Dorfman on Twitter: \"nice @littlebigdetail from @HipChat (shows hex colors when pasted in chat). http://t.co/7cI6Gjy5pq\""
+        let atlassianProvidedExpectedResult = "Twitter / jdorfman: nice @littlebigdetail from ..."
+        let expectation = expectationWithDescription("GET \(url)")
         
+        let task = parser!.pageTitleForURL(
+            url,
+            completionBlock: { (pageTitle: String?, error: NSError?) in
+                
+                XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! == expectedResult)
+                // As of 2016-05-01
+                // The page title provided in the specs is truncated, and actually 
+                // Twitter has changed the page title, that is actually incorrect 
+                // from the result's POV.
+                XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! != atlassianProvidedExpectedResult)
+                expectation.fulfill()
+            }
+        )
+        
+        waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+            task.cancel()
+        }
     }
 }
