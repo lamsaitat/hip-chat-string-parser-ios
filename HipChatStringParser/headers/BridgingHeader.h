@@ -12,4 +12,7 @@
 #import "HCStubStringParser.h"
 #import "HCParserFactory.h"
 
+// Libraries
+#import <GDataXML-HTML/GDataXMLNode.h>
+
 #endif /* BridgingHeader_h */
