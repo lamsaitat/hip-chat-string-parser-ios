@@ -34,7 +34,7 @@ class HipChatStringParserEmoticonsTests: XCTestCase {
     func testEmoticonsArrayWithEmptyInputString() {
         let inputString = ""
         let expectedResults = [String]() // Empty array.
-        let parsedResults = parser!.mentionsFromString(inputString)
+        let parsedResults = parser!.emoticonsFromString(inputString)
         
         XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
     }
