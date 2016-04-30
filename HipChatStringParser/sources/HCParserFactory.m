@@ -10,6 +10,7 @@
 #import "HCParser.h"
 #import "HCStringParser.h"
 #import "HCStubStringParser.h"
+#import "HCURLFetchingStringParser.h"
 
 
 @implementation HCParserFactory
@@ -24,6 +25,10 @@
 
 + (id<HCParser>)stringParser {
     return [HCStringParser new];
+}
+
++ (HCURLFetchingStringParser *)urlFetchingParser {
+    return [HCURLFetchingStringParser new];
 }
 
 @end

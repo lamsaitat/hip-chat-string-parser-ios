@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+@class HCURLFetchingStringParser;
 @protocol HCParser;
+
 
 @interface HCParserFactory : NSObject
 
 /** Creates a parser instance that conforms to the HCParser protocol.
  */
 + (id<HCParser>)parser;
+
++ (HCURLFetchingStringParser *)urlFetchingParser;
 
 @end
