@@ -9,5 +9,7 @@
 #ifndef BridgingHeader_h
 #define BridgingHeader_h
 
+#import "HCStubStringParser.h"
+
 
 #endif /* BridgingHeader_h */
