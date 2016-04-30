@@ -15,7 +15,7 @@ class HipChatStringParserTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        parser = HCStubStringParser()
+        parser = HCParserFactory.parser()
     }
     
     override func tearDown() {
