@@ -9,8 +9,11 @@
 #ifndef BridgingHeader_h
 #define BridgingHeader_h
 
-#import "HCStubStringParser.h"
 #import "HCParserFactory.h"
+#import "HCParser.h"
+#import "HCStringParser.h"
+#import "HCStubStringParser.h"
+#import "HCURLFetchingStringParser.h"
 
 // Libraries
 #import <GDataXML-HTML/GDataXMLNode.h>
