@@ -77,8 +77,26 @@
 }
 
 - (NSArray<NSString *> *)urlLinksFromString:(NSString *)sourceString {
-    // TODO: Implement the method.
-    return @[];
+    NSMutableArray *links = [NSMutableArray array];
+    
+    if (sourceString) {
+        NSError *detectorError = nil;
+        NSDataDetector *detector = [[NSDataDetector alloc] initWithTypes:NSTextCheckingTypeLink error:&detectorError];
+
+        if (detector != nil && detectorError == nil) {
+            NSArray *results = [detector matchesInString:sourceString options:NSMatchingReportProgress range:NSMakeRange(0, sourceString.length)];
+            
+            for (NSTextCheckingResult *result in results) {
+                if (result.URL != nil) {
+                    [links addObject:result.URL.absoluteString];
+                }
+            }
+        } else {
+            NSLog(@"Failed to initialise a data detector with error: %@", [detectorError localizedDescription]);
+        }
+    }
+    
+    return links;
 }
 
 /** Unique set of mentions while preserving the order.
