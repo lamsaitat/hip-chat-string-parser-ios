@@ -115,6 +115,14 @@ class HipChatStringParserMentionsTests: XCTestCase {
         XCTAssertFalse(Set(parsedResults).contains("atlassian.com"))
     }
     
+    func testMentionsArrayWithTypoExtraAtSymbols() {
+        let inputString = "@@@@Ben is everyone's uncle."
+        let expectedResults = ["Ben"]
+        let parsedResults = parser!.mentionsFromString(inputString)
+        
+        XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
+    }
+    
     
     // MARK: - Test cases for the Atlassian requirements.
     
