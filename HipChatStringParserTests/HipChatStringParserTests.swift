@@ -22,13 +22,13 @@ class HipChatStringParserTests: XCTestCase {
         super.tearDown()
     }
     
+    
     // MARK: - Error handling test cases.
     
     func testMentionsArrayWithNilString() {
         let inputString: String? = nil
         let expectedResults = [String]() // Empty array.
         let parsedResults = parser!.mentionsFromString(inputString)
-        
         // We are only interested in comparing the elements contained, the order
         // is not a test scope.
         XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
@@ -39,8 +39,6 @@ class HipChatStringParserTests: XCTestCase {
         let expectedResults = [String]() // Empty array.
         let parsedResults = parser!.mentionsFromString(inputString)
         
-        // We are only interested in comparing the elements contained, the order
-        // is not a test scope.
         XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
     }
     
@@ -51,8 +49,6 @@ class HipChatStringParserTests: XCTestCase {
         let expectedResults = ["chris"]
         let parsedResults = parser!.mentionsFromString(inputString)
         
-        // We are only interested in comparing the elements contained, the order
-        // is not a test scope.
         XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
     }
     
@@ -61,8 +57,6 @@ class HipChatStringParserTests: XCTestCase {
         let expectedResults = [String]() // Empty array.
         let parsedResults = parser!.mentionsFromString(inputString)
         
-        // We are only interested in comparing the elements contained, the order
-        // is not a test scope.
         XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
     }
     
@@ -71,8 +65,6 @@ class HipChatStringParserTests: XCTestCase {
         let expectedResults = [String]() // Empty array.
         let parsedResults = parser!.mentionsFromString(inputString)
         
-        // We are only interested in comparing the elements contained, the order
-        // is not a test scope.
         XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
     }
     
@@ -80,9 +72,7 @@ class HipChatStringParserTests: XCTestCase {
         let inputString = "@bob @john (success) such a cool feature; https://twitter.com/jdorfman/status/430511497475670016"
         let expectedResults = ["bob", "john"]
         let parsedResults = parser!.mentionsFromString(inputString)
-        
-        // We are only interested in comparing the elements contained, the order
-        // is not a test scope.
+
         XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
     }
 }
