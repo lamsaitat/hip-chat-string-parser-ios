@@ -56,4 +56,33 @@ class HipChatStringParserTests: XCTestCase {
         XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
     }
     
+    func testMentionsArrayWithAtlassianInputString2() {
+        let inputString = "Good morning! (megusta) (coffee)"
+        let expectedResults = [String]() // Empty array.
+        let parsedResults = parser!.mentionsFromString(inputString)
+        
+        // We are only interested in comparing the elements contained, the order
+        // is not a test scope.
+        XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
+    }
+    
+    func testMentionsArrayWithAtlassianInputString3() {
+        let inputString = "Olympics are starting soon;http://www.nbcolympics.com"
+        let expectedResults = [String]() // Empty array.
+        let parsedResults = parser!.mentionsFromString(inputString)
+        
+        // We are only interested in comparing the elements contained, the order
+        // is not a test scope.
+        XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
+    }
+    
+    func testMentionsArrayWithAtlassianInputString4() {
+        let inputString = "@bob @john (success) such a cool feature; https://twitter.com/jdorfman/status/430511497475670016"
+        let expectedResults = ["bob", "john"]
+        let parsedResults = parser!.mentionsFromString(inputString)
+        
+        // We are only interested in comparing the elements contained, the order
+        // is not a test scope.
+        XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
+    }
 }
