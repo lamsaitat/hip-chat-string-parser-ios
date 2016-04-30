@@ -51,4 +51,10 @@
     return @[];
 }
 
+/** Unique set of mentions while preserving the order.
+ */
+- (NSOrderedSet<NSString *> *)uniqueMentionsFromString:(NSString *)sourceString {
+    return [NSOrderedSet orderedSetWithArray:[self mentionsFromString:sourceString]];
+}
+
 @end
