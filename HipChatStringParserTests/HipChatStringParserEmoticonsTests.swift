@@ -59,8 +59,8 @@ class HipChatStringParserEmoticonsTests: XCTestCase {
     }
     
     func testEmoticonsArrayWithMultipleValidResults() {
-        let inputString = "(daenerys) (jonsnow) ()"
-        let expectedResults = ["daenerys"]
+        let inputString = "(daenerys) (jonsnow) (arya) have featured in the episode 1 of Game of Thrones."
+        let expectedResults = ["daenerys", "jonsnow", "arya"]
         let parsedResults = parser!.emoticonsFromString(inputString)
         
         XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
