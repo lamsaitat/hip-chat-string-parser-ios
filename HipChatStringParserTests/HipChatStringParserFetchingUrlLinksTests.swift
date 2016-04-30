@@ -9,6 +9,9 @@
 import XCTest
 @testable import HipChatStringParser
 
+// Note: We assume that to fetch for page title of a URL, there must be internet
+// connection.  The Reachability check is probably best handled by view controllers
+// as it can display alerts and indicators based on the Reachability status.
 class HipChatStringParserFetchingUrlLinksTests: XCTestCase {
     var parser: HCURLFetchingStringParser?
     
