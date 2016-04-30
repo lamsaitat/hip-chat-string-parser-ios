@@ -18,10 +18,6 @@ class HipChatStringParserMentionsTests: XCTestCase {
         parser = HCParserFactory.parser()
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-    
     
     // MARK: - Error handling test cases.
     
