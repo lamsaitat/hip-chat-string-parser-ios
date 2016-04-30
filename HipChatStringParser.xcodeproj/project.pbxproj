@@ -21,6 +21,7 @@
 		CB0049B31CD4C49000594CEE /* HCStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0049B11CD4C49000594CEE /* HCStringParser.m */; };
 		CB0049C51CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049C41CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift */; };
 		CB0049C71CD504FC00594CEE /* emoticons-list-newlined.txt in Resources */ = {isa = PBXBuildFile; fileRef = CB0049C61CD504FC00594CEE /* emoticons-list-newlined.txt */; };
+		CB0049C91CD50D5A00594CEE /* HipChatStringParserUrlLinksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049C81CD50D5A00594CEE /* HipChatStringParserUrlLinksTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		CB0049B11CD4C49000594CEE /* HCStringParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCStringParser.m; sourceTree = "<group>"; };
 		CB0049C41CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChatStringParserEmoticonsTests.swift; sourceTree = "<group>"; };
 		CB0049C61CD504FC00594CEE /* emoticons-list-newlined.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "emoticons-list-newlined.txt"; sourceTree = "<group>"; };
+		CB0049C81CD50D5A00594CEE /* HipChatStringParserUrlLinksTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChatStringParserUrlLinksTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				CB0049C61CD504FC00594CEE /* emoticons-list-newlined.txt */,
 				CB00498C1CD4A6A200594CEE /* HipChatStringParserMentionsTests.swift */,
 				CB0049C41CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift */,
+				CB0049C81CD50D5A00594CEE /* HipChatStringParserUrlLinksTests.swift */,
 				CB00498E1CD4A6A200594CEE /* Info.plist */,
 			);
 			path = HipChatStringParserTests;
@@ -259,6 +262,7 @@
 				CB0049B31CD4C49000594CEE /* HCStringParser.m in Sources */,
 				CB0049C51CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift in Sources */,
 				CB00498D1CD4A6A200594CEE /* HipChatStringParserMentionsTests.swift in Sources */,
+				CB0049C91CD50D5A00594CEE /* HipChatStringParserUrlLinksTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
