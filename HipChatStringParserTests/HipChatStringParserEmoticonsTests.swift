@@ -22,7 +22,7 @@ class HipChatStringParserEmoticonsTests: XCTestCase {
 
     // MARK: - Error handling test cases.
     
-    func testMentionsArrayWithNilString() {
+    func testEmoticonsArrayWithNilString() {
         let inputString: String? = nil
         let expectedResults = [String]() // Empty array.
         let parsedResults = parser!.emoticonsFromString(inputString)
@@ -31,7 +31,7 @@ class HipChatStringParserEmoticonsTests: XCTestCase {
         XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
     }
     
-    func testMentionsArrayWithEmptyInputString() {
+    func testEmoticonsArrayWithEmptyInputString() {
         let inputString = ""
         let expectedResults = [String]() // Empty array.
         let parsedResults = parser!.mentionsFromString(inputString)
