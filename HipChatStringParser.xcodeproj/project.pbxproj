@@ -20,6 +20,7 @@
 		CB0049B21CD4C49000594CEE /* HCStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0049B11CD4C49000594CEE /* HCStringParser.m */; };
 		CB0049B31CD4C49000594CEE /* HCStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0049B11CD4C49000594CEE /* HCStringParser.m */; };
 		CB0049C51CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049C41CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift */; };
+		CB0049C71CD504FC00594CEE /* emoticons-list-newlined.txt in Resources */ = {isa = PBXBuildFile; fileRef = CB0049C61CD504FC00594CEE /* emoticons-list-newlined.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		CB0049B01CD4C49000594CEE /* HCStringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCStringParser.h; sourceTree = "<group>"; };
 		CB0049B11CD4C49000594CEE /* HCStringParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCStringParser.m; sourceTree = "<group>"; };
 		CB0049C41CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChatStringParserEmoticonsTests.swift; sourceTree = "<group>"; };
+		CB0049C61CD504FC00594CEE /* emoticons-list-newlined.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "emoticons-list-newlined.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +110,10 @@
 		CB00498B1CD4A6A200594CEE /* HipChatStringParserTests */ = {
 			isa = PBXGroup;
 			children = (
+				CB0049C61CD504FC00594CEE /* emoticons-list-newlined.txt */,
 				CB00498C1CD4A6A200594CEE /* HipChatStringParserMentionsTests.swift */,
-				CB00498E1CD4A6A200594CEE /* Info.plist */,
 				CB0049C41CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift */,
+				CB00498E1CD4A6A200594CEE /* Info.plist */,
 			);
 			path = HipChatStringParserTests;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB0049C71CD504FC00594CEE /* emoticons-list-newlined.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
