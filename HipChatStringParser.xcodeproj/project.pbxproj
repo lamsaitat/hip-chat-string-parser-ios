@@ -15,6 +15,8 @@
 		CB00498D1CD4A6A200594CEE /* HipChatStringParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB00498C1CD4A6A200594CEE /* HipChatStringParserTests.swift */; };
 		CB0049A11CD4A91D00594CEE /* HCStubStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0049A01CD4A91D00594CEE /* HCStubStringParser.m */; };
 		CB0049A21CD4A91D00594CEE /* HCStubStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0049A01CD4A91D00594CEE /* HCStubStringParser.m */; };
+		CB0049AE1CD4C15900594CEE /* HCParserFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0049AD1CD4C15900594CEE /* HCParserFactory.m */; };
+		CB0049AF1CD4C15900594CEE /* HCParserFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0049AD1CD4C15900594CEE /* HCParserFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		CB00499D1CD4A90100594CEE /* HCParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCParser.h; sourceTree = "<group>"; };
 		CB00499F1CD4A91D00594CEE /* HCStubStringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCStubStringParser.h; sourceTree = "<group>"; };
 		CB0049A01CD4A91D00594CEE /* HCStubStringParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCStubStringParser.m; sourceTree = "<group>"; };
+		CB0049AC1CD4C15900594CEE /* HCParserFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCParserFactory.h; sourceTree = "<group>"; };
+		CB0049AD1CD4C15900594CEE /* HCParserFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCParserFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				CB00499D1CD4A90100594CEE /* HCParser.h */,
 				CB00499F1CD4A91D00594CEE /* HCStubStringParser.h */,
 				CB0049A01CD4A91D00594CEE /* HCStubStringParser.m */,
+				CB0049AC1CD4C15900594CEE /* HCParserFactory.h */,
+				CB0049AD1CD4C15900594CEE /* HCParserFactory.m */,
 			);
 			path = sources;
 			sourceTree = "<group>";
@@ -223,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB0049AE1CD4C15900594CEE /* HCParserFactory.m in Sources */,
 				CB0049A11CD4A91D00594CEE /* HCStubStringParser.m in Sources */,
 				CB00497A1CD4A6A200594CEE /* ViewController.swift in Sources */,
 				CB0049781CD4A6A200594CEE /* AppDelegate.swift in Sources */,
@@ -234,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB0049A21CD4A91D00594CEE /* HCStubStringParser.m in Sources */,
+				CB0049AF1CD4C15900594CEE /* HCParserFactory.m in Sources */,
 				CB00498D1CD4A6A200594CEE /* HipChatStringParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
