@@ -14,17 +14,17 @@
 /**
  * Detects all user mention of @XXXX pattern from a given string.
  */
-- (NSArray *)mentionsFromString:(NSString *)sourceString;
+- (NSArray<NSString *> *)mentionsFromString:(NSString *)sourceString;
 
 /**
  * Detects all emoticons of (XXX) pattern from a given string.
  */
-- (NSArray *)emoticonsFromString:(NSString *)sourceString;
+- (NSArray<NSString *> *)emoticonsFromString:(NSString *)sourceString;
 
 /**
  * Detects all urls contained from a given string.
  */
-- (NSArray *)urlLinksFromString:(NSString *)sourceString;
+- (NSArray<NSString *> *)urlLinksFromString:(NSString *)sourceString;
 
 @end
 

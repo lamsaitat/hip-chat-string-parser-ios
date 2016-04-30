@@ -10,17 +10,17 @@
 
 @implementation HCStubStringParser
 
-- (NSArray *)mentionsFromString:(NSString *)sourceString {
+- (NSArray<NSString *> *)mentionsFromString:(NSString *)sourceString {
     // Guaranteed to fail any tests. except if you supply an empty string.
     return @[];
 }
 
-- (NSArray *)emoticonsFromString:(NSString *)sourceString {
+- (NSArray<NSString *> *)emoticonsFromString:(NSString *)sourceString {
     // Guaranteed to fail any tests. except if you supply an empty string.
     return @[];
 }
 
-- (NSArray *)urlLinksFromString:(NSString *)sourceString {
+- (NSArray<NSString *> *)urlLinksFromString:(NSString *)sourceString {
     // Guaranteed to fail any tests. except if you supply an empty string.
     return @[];
 }
