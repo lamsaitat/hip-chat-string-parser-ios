@@ -22,6 +22,27 @@ class HipChatStringParserTests: XCTestCase {
         super.tearDown()
     }
     
+    // MARK: - Error handling test cases.
+    
+    func testMentionsArrayWithNilString() {
+        let inputString: String? = nil
+        let expectedResults = [String]() // Empty array.
+        let parsedResults = parser!.mentionsFromString(inputString)
+        
+        // We are only interested in comparing the elements contained, the order
+        // is not a test scope.
+        XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
+    }
+    
+    func testMentionsArrayWithEmptyInputString() {
+        let inputString = ""
+        let expectedResults = [String]() // Empty array.
+        let parsedResults = parser!.mentionsFromString(inputString)
+        
+        // We are only interested in comparing the elements contained, the order
+        // is not a test scope.
+        XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
+    }
     
     // MARK: - Test cases for the Atlassian requirements.
     
