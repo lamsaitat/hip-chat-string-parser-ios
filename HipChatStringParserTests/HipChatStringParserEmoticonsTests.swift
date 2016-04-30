@@ -39,6 +39,23 @@ class HipChatStringParserEmoticonsTests: XCTestCase {
         XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
     }
     
+    func testEmoticonsArrayWithInvalidString1() {
+        let inputString = "()"
+        let expectedResults = [String]() // Empty array.
+        let parsedResults = parser!.emoticonsFromString(inputString)
+        
+        XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
+    }
+    
+    func testEmoticonsArrayWithInvalidString2() {
+        let inputString = "(_ _)"
+        let expectedResults = [String]() // Empty array.
+        let parsedResults = parser!.emoticonsFromString(inputString)
+        
+        XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
+        XCTAssertFalse(Set(parsedResults).contains("_ _"))
+    }
+    
     
     // MARK: - Valid results
     
