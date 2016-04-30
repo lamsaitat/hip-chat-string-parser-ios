@@ -42,8 +42,38 @@
 }
 
 - (NSArray<NSString *> *)emoticonsFromString:(NSString *)sourceString {
-    // TODO: Implement the method.
-    return @[];
+    NSError *regexError = nil;
+    NSMutableArray *mentions = [NSMutableArray array];
+    
+    // Make sure the string is parseable first.
+    if (sourceString && sourceString.length > 0) {
+        // Emoticons - For this exercise, you only need to consider 'custom'
+        // emoticons which are alphanumeric strings, no longer than 15
+        // characters, contained in parenthesis. You can assume that anything
+        // matching this format is an emoticon.
+        // (https://www.hipchat.com/emoticons)
+        NSString *pattern = @"\\([a-zA-Z0-9]{1,15}\\)";
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&regexError];
+        if (regex != nil && regexError == nil) {
+            NSArray *results = [regex matchesInString:sourceString options:0 range:NSMakeRange(0, sourceString.length)];
+            
+            for (NSTextCheckingResult *result in results) {
+                NSRange range = result.range;
+                // We know that an emoticon must be surrounded by (), so we need
+                // to strip away the first char, and the last.
+                // i.e. Shift forward the starting range by 1, and less 2 chars
+                // in length.
+                range.location += 1;
+                range.length -= 2;
+                NSString *mention = [sourceString substringWithRange:range];
+                [mentions addObject:mention];
+            }
+        } else {
+            NSLog(@"Failed to initialise regex with error: %@", regexError.localizedDescription);
+        }
+    }
+    
+    return mentions;
 }
 
 - (NSArray<NSString *> *)urlLinksFromString:(NSString *)sourceString {
