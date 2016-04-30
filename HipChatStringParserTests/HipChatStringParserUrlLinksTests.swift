@@ -37,6 +37,15 @@ class HipChatStringParserUrlLinksTests: XCTestCase {
         XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
     }
     
+    func testUrlLinksWithIncomplete() {
+        let inputString = "https://"
+        
+        let expectedResults = [String]() // Empty array.
+        let parsedResults = parser!.urlLinksFromString(inputString)
+        
+        XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
+    }
+    
     
     // MARK: - Valid results
     
