@@ -10,7 +10,7 @@
 
 @implementation HCURLFetchingStringParser
 
-- (void)pageTitleForURL:(NSURL *)url completionBlock:(nullable void(^)(NSString * __nullable, NSError * __nullable))completionBlock {
+- (NSURLSessionDataTask *)pageTitleForURL:(NSURL *)url completionBlock:(nullable void(^)(NSString * __nullable, NSError * __nullable))completionBlock {
     
 }
 
