@@ -1,0 +1,425 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB0049781CD4A6A200594CEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049771CD4A6A200594CEE /* AppDelegate.swift */; };
+		CB00497A1CD4A6A200594CEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049791CD4A6A200594CEE /* ViewController.swift */; };
+		CB00497D1CD4A6A200594CEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB00497B1CD4A6A200594CEE /* Main.storyboard */; };
+		CB00497F1CD4A6A200594CEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB00497E1CD4A6A200594CEE /* Assets.xcassets */; };
+		CB0049821CD4A6A200594CEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB0049801CD4A6A200594CEE /* LaunchScreen.storyboard */; };
+		CB00498D1CD4A6A200594CEE /* HipChatStringParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB00498C1CD4A6A200594CEE /* HipChatStringParserTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB0049891CD4A6A200594CEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB00496C1CD4A6A200594CEE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB0049731CD4A6A200594CEE;
+			remoteInfo = HipChatStringParser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CB0049741CD4A6A200594CEE /* HipChatStringParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HipChatStringParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB0049771CD4A6A200594CEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CB0049791CD4A6A200594CEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CB00497C1CD4A6A200594CEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB00497E1CD4A6A200594CEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB0049811CD4A6A200594CEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CB0049831CD4A6A200594CEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB0049881CD4A6A200594CEE /* HipChatStringParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HipChatStringParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB00498C1CD4A6A200594CEE /* HipChatStringParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HipChatStringParserTests.swift; sourceTree = "<group>"; };
+		CB00498E1CD4A6A200594CEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB00499B1CD4A6F600594CEE /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB0049711CD4A6A200594CEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB0049851CD4A6A200594CEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB00496B1CD4A6A200594CEE = {
+			isa = PBXGroup;
+			children = (
+				CB0049761CD4A6A200594CEE /* HipChatStringParser */,
+				CB00498B1CD4A6A200594CEE /* HipChatStringParserTests */,
+				CB0049751CD4A6A200594CEE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB0049751CD4A6A200594CEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB0049741CD4A6A200594CEE /* HipChatStringParser.app */,
+				CB0049881CD4A6A200594CEE /* HipChatStringParserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB0049761CD4A6A200594CEE /* HipChatStringParser */ = {
+			isa = PBXGroup;
+			children = (
+				CB00499C1CD4A73100594CEE /* sources */,
+				CB0049971CD4A6C700594CEE /* headers */,
+				CB0049771CD4A6A200594CEE /* AppDelegate.swift */,
+				CB0049791CD4A6A200594CEE /* ViewController.swift */,
+				CB00497B1CD4A6A200594CEE /* Main.storyboard */,
+				CB00497E1CD4A6A200594CEE /* Assets.xcassets */,
+				CB0049801CD4A6A200594CEE /* LaunchScreen.storyboard */,
+				CB0049831CD4A6A200594CEE /* Info.plist */,
+			);
+			path = HipChatStringParser;
+			sourceTree = "<group>";
+		};
+		CB00498B1CD4A6A200594CEE /* HipChatStringParserTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB00498C1CD4A6A200594CEE /* HipChatStringParserTests.swift */,
+				CB00498E1CD4A6A200594CEE /* Info.plist */,
+			);
+			path = HipChatStringParserTests;
+			sourceTree = "<group>";
+		};
+		CB0049971CD4A6C700594CEE /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				CB00499B1CD4A6F600594CEE /* BridgingHeader.h */,
+			);
+			path = headers;
+			sourceTree = "<group>";
+		};
+		CB00499C1CD4A73100594CEE /* sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB0049731CD4A6A200594CEE /* HipChatStringParser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB0049911CD4A6A200594CEE /* Build configuration list for PBXNativeTarget "HipChatStringParser" */;
+			buildPhases = (
+				CB0049701CD4A6A200594CEE /* Sources */,
+				CB0049711CD4A6A200594CEE /* Frameworks */,
+				CB0049721CD4A6A200594CEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HipChatStringParser;
+			productName = HipChatStringParser;
+			productReference = CB0049741CD4A6A200594CEE /* HipChatStringParser.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB0049871CD4A6A200594CEE /* HipChatStringParserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB0049941CD4A6A200594CEE /* Build configuration list for PBXNativeTarget "HipChatStringParserTests" */;
+			buildPhases = (
+				CB0049841CD4A6A200594CEE /* Sources */,
+				CB0049851CD4A6A200594CEE /* Frameworks */,
+				CB0049861CD4A6A200594CEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB00498A1CD4A6A200594CEE /* PBXTargetDependency */,
+			);
+			name = HipChatStringParserTests;
+			productName = HipChatStringParserTests;
+			productReference = CB0049881CD4A6A200594CEE /* HipChatStringParserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB00496C1CD4A6A200594CEE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Sai Tat Lam";
+				TargetAttributes = {
+					CB0049731CD4A6A200594CEE = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					CB0049871CD4A6A200594CEE = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = CB0049731CD4A6A200594CEE;
+					};
+				};
+			};
+			buildConfigurationList = CB00496F1CD4A6A200594CEE /* Build configuration list for PBXProject "HipChatStringParser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB00496B1CD4A6A200594CEE;
+			productRefGroup = CB0049751CD4A6A200594CEE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB0049731CD4A6A200594CEE /* HipChatStringParser */,
+				CB0049871CD4A6A200594CEE /* HipChatStringParserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB0049721CD4A6A200594CEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB0049821CD4A6A200594CEE /* LaunchScreen.storyboard in Resources */,
+				CB00497F1CD4A6A200594CEE /* Assets.xcassets in Resources */,
+				CB00497D1CD4A6A200594CEE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB0049861CD4A6A200594CEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB0049701CD4A6A200594CEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB00497A1CD4A6A200594CEE /* ViewController.swift in Sources */,
+				CB0049781CD4A6A200594CEE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB0049841CD4A6A200594CEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB00498D1CD4A6A200594CEE /* HipChatStringParserTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB00498A1CD4A6A200594CEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB0049731CD4A6A200594CEE /* HipChatStringParser */;
+			targetProxy = CB0049891CD4A6A200594CEE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB00497B1CD4A6A200594CEE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB00497C1CD4A6A200594CEE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CB0049801CD4A6A200594CEE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB0049811CD4A6A200594CEE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB00498F1CD4A6A200594CEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB0049901CD4A6A200594CEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB0049921CD4A6A200594CEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HipChatStringParser/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lamsaitat..HipChatStringParser;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = HipChatStringParser/headers/BridgingHeader.h;
+			};
+			name = Debug;
+		};
+		CB0049931CD4A6A200594CEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HipChatStringParser/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lamsaitat..HipChatStringParser;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = HipChatStringParser/headers/BridgingHeader.h;
+			};
+			name = Release;
+		};
+		CB0049951CD4A6A200594CEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HipChatStringParserTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lamsaitat..HipChatStringParserTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HipChatStringParser.app/HipChatStringParser";
+			};
+			name = Debug;
+		};
+		CB0049961CD4A6A200594CEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HipChatStringParserTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lamsaitat..HipChatStringParserTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HipChatStringParser.app/HipChatStringParser";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB00496F1CD4A6A200594CEE /* Build configuration list for PBXProject "HipChatStringParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB00498F1CD4A6A200594CEE /* Debug */,
+				CB0049901CD4A6A200594CEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB0049911CD4A6A200594CEE /* Build configuration list for PBXNativeTarget "HipChatStringParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB0049921CD4A6A200594CEE /* Debug */,
+				CB0049931CD4A6A200594CEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CB0049941CD4A6A200594CEE /* Build configuration list for PBXNativeTarget "HipChatStringParserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB0049951CD4A6A200594CEE /* Debug */,
+				CB0049961CD4A6A200594CEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB00496C1CD4A6A200594CEE /* Project object */;
+}
