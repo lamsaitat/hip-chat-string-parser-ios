@@ -7,28 +7,38 @@
 //
 
 import XCTest
+@testable import HipChatStringParser
 
 class HipChatStringParserFetchingUrlLinksTests: XCTestCase {
+    var parser: HCURLFetchingStringParser?
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        parser = HCURLFetchingStringParser()
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+    // MARK: - Test for valid urls
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+    func testPageTitleFetchingWithSimpleUrl1() {
+        let inputString = "https://www.google.com.au"
+        let url = NSURL(string: inputString)
+        let expectedResult = "Google"
+        let expectation = expectationWithDescription("GET \(url)")
+        
+        let task = parser!.pageTitleForURL(
+            url,
+            completionBlock: { (pageTitle: String?, error: NSError?) in
+                
+                XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! == expectedResult)
+                expectation.fulfill()
+            }
+        )
+        
+        waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+            task.cancel()
         }
     }
     
