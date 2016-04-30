@@ -19,6 +19,7 @@
 		CB0049AF1CD4C15900594CEE /* HCParserFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0049AD1CD4C15900594CEE /* HCParserFactory.m */; };
 		CB0049B21CD4C49000594CEE /* HCStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0049B11CD4C49000594CEE /* HCStringParser.m */; };
 		CB0049B31CD4C49000594CEE /* HCStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0049B11CD4C49000594CEE /* HCStringParser.m */; };
+		CB0049C51CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049C41CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		CB0049AD1CD4C15900594CEE /* HCParserFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCParserFactory.m; sourceTree = "<group>"; };
 		CB0049B01CD4C49000594CEE /* HCStringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCStringParser.h; sourceTree = "<group>"; };
 		CB0049B11CD4C49000594CEE /* HCStringParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCStringParser.m; sourceTree = "<group>"; };
+		CB0049C41CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChatStringParserEmoticonsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				CB00498C1CD4A6A200594CEE /* HipChatStringParserMentionsTests.swift */,
 				CB00498E1CD4A6A200594CEE /* Info.plist */,
+				CB0049C41CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift */,
 			);
 			path = HipChatStringParserTests;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				CB0049A21CD4A91D00594CEE /* HCStubStringParser.m in Sources */,
 				CB0049AF1CD4C15900594CEE /* HCParserFactory.m in Sources */,
 				CB0049B31CD4C49000594CEE /* HCStringParser.m in Sources */,
+				CB0049C51CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift in Sources */,
 				CB00498D1CD4A6A200594CEE /* HipChatStringParserMentionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
