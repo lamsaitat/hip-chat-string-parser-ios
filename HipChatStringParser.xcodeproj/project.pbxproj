@@ -12,7 +12,7 @@
 		CB00497D1CD4A6A200594CEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB00497B1CD4A6A200594CEE /* Main.storyboard */; };
 		CB00497F1CD4A6A200594CEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB00497E1CD4A6A200594CEE /* Assets.xcassets */; };
 		CB0049821CD4A6A200594CEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB0049801CD4A6A200594CEE /* LaunchScreen.storyboard */; };
-		CB00498D1CD4A6A200594CEE /* HipChatStringParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB00498C1CD4A6A200594CEE /* HipChatStringParserTests.swift */; };
+		CB00498D1CD4A6A200594CEE /* HipChatStringParserMentionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB00498C1CD4A6A200594CEE /* HipChatStringParserMentionsTests.swift */; };
 		CB0049A11CD4A91D00594CEE /* HCStubStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0049A01CD4A91D00594CEE /* HCStubStringParser.m */; };
 		CB0049A21CD4A91D00594CEE /* HCStubStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0049A01CD4A91D00594CEE /* HCStubStringParser.m */; };
 		CB0049AE1CD4C15900594CEE /* HCParserFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0049AD1CD4C15900594CEE /* HCParserFactory.m */; };
@@ -40,7 +40,7 @@
 		CB0049811CD4A6A200594CEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB0049831CD4A6A200594CEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB0049881CD4A6A200594CEE /* HipChatStringParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HipChatStringParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB00498C1CD4A6A200594CEE /* HipChatStringParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HipChatStringParserTests.swift; sourceTree = "<group>"; };
+		CB00498C1CD4A6A200594CEE /* HipChatStringParserMentionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HipChatStringParserMentionsTests.swift; sourceTree = "<group>"; };
 		CB00498E1CD4A6A200594CEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB00499B1CD4A6F600594CEE /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		CB00499D1CD4A90100594CEE /* HCParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCParser.h; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		CB00498B1CD4A6A200594CEE /* HipChatStringParserTests */ = {
 			isa = PBXGroup;
 			children = (
-				CB00498C1CD4A6A200594CEE /* HipChatStringParserTests.swift */,
+				CB00498C1CD4A6A200594CEE /* HipChatStringParserMentionsTests.swift */,
 				CB00498E1CD4A6A200594CEE /* Info.plist */,
 			);
 			path = HipChatStringParserTests;
@@ -250,7 +250,7 @@
 				CB0049A21CD4A91D00594CEE /* HCStubStringParser.m in Sources */,
 				CB0049AF1CD4C15900594CEE /* HCParserFactory.m in Sources */,
 				CB0049B31CD4C49000594CEE /* HCStringParser.m in Sources */,
-				CB00498D1CD4A6A200594CEE /* HipChatStringParserTests.swift in Sources */,
+				CB00498D1CD4A6A200594CEE /* HipChatStringParserMentionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +441,7 @@
 				CB0049931CD4A6A200594CEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB0049941CD4A6A200594CEE /* Build configuration list for PBXNativeTarget "HipChatStringParserTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +450,7 @@
 				CB0049961CD4A6A200594CEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

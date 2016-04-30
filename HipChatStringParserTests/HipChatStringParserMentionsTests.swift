@@ -1,6 +1,6 @@
 //
-//  HipChatStringParserTests.swift
-//  HipChatStringParserTests
+//  HipChatStringParserMentionsTests.swift
+//  HipChatStringParserMentionsTests
 //
 //  Created by Sai Tat Lam on 30/04/2016.
 //  Copyright © 2016 Sai Tat Lam. All rights reserved.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import HipChatStringParser
 
-class HipChatStringParserTests: XCTestCase {
+class HipChatStringParserMentionsTests: XCTestCase {
     var parser: HCParser?
     
     override func setUp() {
