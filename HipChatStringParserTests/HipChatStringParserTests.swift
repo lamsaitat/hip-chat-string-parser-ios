@@ -42,6 +42,35 @@ class HipChatStringParserTests: XCTestCase {
         XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
     }
     
+    
+    // MARK: - Testing valid mentions
+    
+    
+    func testMentionsArrayWithSimpleValidString1() {
+        let inputString = "@bruceWyane is Batman."
+        let expectedResults = ["bruceWyane"]
+        let parsedResults = parser!.mentionsFromString(inputString)
+        
+        XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
+    }
+    
+    func testMentionsArrayWithValidString2ContainsUnderscore() {
+        let inputString = "@Clark_Kent has a collection of Superman suits."
+        let expectedResults = ["Clark_Kent"]
+        let parsedResults = parser!.mentionsFromString(inputString)
+        
+        XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
+    }
+    
+    func testMentionsArrayWithMultipleMentions1() {
+        let inputString = "@Clark_Kent has a collection of @Superman suits. - @Batman"
+        let expectedResults = ["Clark_Kent", "Superman", "Batman"]
+        let parsedResults = parser!.mentionsFromString(inputString)
+        
+        XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
+    }
+    
+    
     // MARK: - Test cases for the Atlassian requirements.
     
     func testMentionsArrayWithAtlassianInputString1() {
