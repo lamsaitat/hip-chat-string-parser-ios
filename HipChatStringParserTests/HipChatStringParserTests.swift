@@ -71,6 +71,51 @@ class HipChatStringParserTests: XCTestCase {
     }
     
     
+    // MARK: - Edge cases
+    
+    func testMentionsArrayWithReallyLongMention1() {
+        let inputString = "@DaenerysOfHouseTargaryen_theFirstOfHerName_QueenOfMeereen_QueenOfTheAndals_theRhoynarAndTheFirstMen_LadyRegnantOfTheSevenKingdoms_ProtectorOfTheRealm_KhaleesiOfTheGreatGrassSea_BreakerOfChains_MotherOfDragons hey your name is way too long. - @Jorah"
+        let expectedResults = ["DaenerysOfHouseTargaryen_theFirstOfHerName_QueenOfMeereen_QueenOfTheAndals_theRhoynarAndTheFirstMen_LadyRegnantOfTheSevenKingdoms_ProtectorOfTheRealm_KhaleesiOfTheGreatGrassSea_BreakerOfChains_MotherOfDragons", "Jorah"]
+        let parsedResults = parser!.mentionsFromString(inputString)
+        
+        XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
+        XCTAssertFalse(
+            Set(parsedResults).contains(
+                "DaenerysOfHouseTargaryen_theFirstOfHerName_QueenOfMeereen_QueenOfTheAndals_theRhoynar"
+            )
+        )
+    }
+    
+    func testMentionsArrayWithPunctuationsAndSomeUserError() {
+        let inputString = "@rhody_iron_patriot, @blackPanther_is_so_badass, vision you guys storm the front and take care of Steve, @yourFriendlyNeighborSpiderman when I signal, get rid of his shield. - @tony_ironman_stark"
+        let expectedResults = ["rhody_iron_patriot", "blackPanther_is_so_badass", "yourFriendlyNeighborSpiderman", "tony_ironman_stark"]
+        let parsedResults = parser!.mentionsFromString(inputString)
+        
+        XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
+        XCTAssertFalse(Set(parsedResults).contains("vision"))
+        XCTAssertFalse(Set(parsedResults).contains("rhody_iron_patriot,"))
+        XCTAssertFalse(Set(parsedResults).contains(" @blackPanther_is_so_badass"))
+    }
+    
+    func testMentionsArrayWithEmailAsMentionName() {
+        // The spec defines a mention as "Always starts with an '@' and ends when 
+        // hitting a non-word character".  A mention is typically a username,
+        // which in some services email is a valid username, so for those services
+        // the valid result should be "jimmyk@atlassian.com", however based on the
+        // specs, the '@' after "jimmyk" is a non word character, therefore 
+        // "jimmyk" is a valid mention, and the pointer technically stops just 
+        // before the 2nd '@', therefore the next chunk is @atlassian since '.' 
+        // is a non word character.
+        let inputString = "For all other inquiries, please contact @jimmyk@atlassian.com"
+        let expectedResults = ["jimmyk", "atlassian"]
+        let parsedResults = parser!.mentionsFromString(inputString)
+        
+        XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
+        XCTAssertFalse(Set(parsedResults).contains("jimmyk@atlassian.com"))
+        XCTAssertFalse(Set(parsedResults).contains("atlassian.com"))
+    }
+    
+    
     // MARK: - Test cases for the Atlassian requirements.
     
     func testMentionsArrayWithAtlassianInputString1() {
