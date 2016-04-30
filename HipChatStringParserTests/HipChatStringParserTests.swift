@@ -22,6 +22,9 @@ class HipChatStringParserTests: XCTestCase {
         super.tearDown()
     }
     
+    
+    // MARK: - Test cases for the Atlassian requirements.
+    
     func testMentionsArrayWithAtlassianInputString1() {
         let inputString = "@chris you around?"
         let expectedResults = ["chris"]
