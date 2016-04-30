@@ -10,27 +10,26 @@ import XCTest
 @testable import HipChatStringParser
 
 class HipChatStringParserTests: XCTestCase {
+    var parser: HCParser?
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        parser = HCStubStringParser()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testMentionsArrayWithAtlassianInputString1() {
+        let inputString = "@chris you around?"
+        let expectedResults = ["chris"]
+        let parsedResults = parser!.mentionsFromString(inputString)
+        
+        // We are only interested in comparing the elements contained, the order
+        // is not a test scope.
+        XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
     }
     
 }
