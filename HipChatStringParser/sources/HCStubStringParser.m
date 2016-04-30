@@ -25,4 +25,22 @@
     return @[];
 }
 
+/** Unique set of mentions while preserving the order.
+ */
+- (NSOrderedSet<NSString *> *)uniqueMentionsFromString:(NSString *)sourceString {
+    return [NSOrderedSet orderedSet];
+}
+
+/** Unique set of emoticons while preserving the order.
+ */
+- (NSOrderedSet<NSString *> *)uniqueEmoticonsFromString:(NSString *)sourceString {
+    return [NSOrderedSet orderedSet];
+}
+
+/** Unique set of urls while preserving the order.
+ */
+- (NSOrderedSet<NSString *> *)uniqueUrlLinksFromString:(NSString *)sourceString {
+    return [NSOrderedSet orderedSet];
+}
+
 @end

@@ -11,8 +11,4 @@
 
 @interface HCStringParser : NSObject<HCParser>
 
-/** Unique set of mentions while preserving the order.
- */
-- (NSOrderedSet<NSString *> *)uniqueMentionsFromString:(NSString *)sourceString;
-
 @end

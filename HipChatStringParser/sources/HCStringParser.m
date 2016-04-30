@@ -57,4 +57,16 @@
     return [NSOrderedSet orderedSetWithArray:[self mentionsFromString:sourceString]];
 }
 
+/** Unique set of emoticons while preserving the order.
+ */
+- (NSOrderedSet<NSString *> *)uniqueEmoticonsFromString:(NSString *)sourceString {
+    return [NSOrderedSet orderedSetWithArray:[self emoticonsFromString:sourceString]];
+}
+
+/** Unique set of urls while preserving the order.
+ */
+- (NSOrderedSet<NSString *> *)uniqueUrlLinksFromString:(NSString *)sourceString {
+    return [NSOrderedSet orderedSetWithArray:[self urlLinksFromString:sourceString]];
+}
+
 @end

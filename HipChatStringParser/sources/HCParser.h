@@ -26,6 +26,18 @@
  */
 - (NSArray<NSString *> *)urlLinksFromString:(NSString *)sourceString;
 
+/** Unique set of mentions while preserving the order.
+ */
+- (NSOrderedSet<NSString *> *)uniqueMentionsFromString:(NSString *)sourceString;
+
+/** Unique set of emoticons while preserving the order.
+ */
+- (NSOrderedSet<NSString *> *)uniqueEmoticonsFromString:(NSString *)sourceString;
+
+/** Unique set of urls while preserving the order.
+ */
+- (NSOrderedSet<NSString *> *)uniqueUrlLinksFromString:(NSString *)sourceString;
+
 @end
 
 
