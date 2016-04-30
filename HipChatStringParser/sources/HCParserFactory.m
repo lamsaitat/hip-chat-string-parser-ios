@@ -7,7 +7,17 @@
 //
 
 #import "HCParserFactory.h"
+#import "HCParser.h"
+#import "HCStubStringParser.h"
 
 @implementation HCParserFactory
+
++ (id<HCParser>)parser {
+    return [self.class stubParser];
+}
+
++ (id<HCParser>)stubParser {
+    return [HCStubStringParser new];
+}
 
 @end

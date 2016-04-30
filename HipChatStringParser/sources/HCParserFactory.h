@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+@protocol HCParser;
 
 @interface HCParserFactory : NSObject
+
+/** Creates a parser instance that conforms to the HCParser protocol.
+ */
++ (id<HCParser>)parser;
 
 @end
