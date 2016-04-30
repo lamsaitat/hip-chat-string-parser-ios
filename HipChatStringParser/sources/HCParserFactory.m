@@ -8,16 +8,22 @@
 
 #import "HCParserFactory.h"
 #import "HCParser.h"
+#import "HCStringParser.h"
 #import "HCStubStringParser.h"
+
 
 @implementation HCParserFactory
 
 + (id<HCParser>)parser {
-    return [self.class stubParser];
+    return [self.class stringParser];
 }
 
 + (id<HCParser>)stubParser {
     return [HCStubStringParser new];
+}
+
++ (id<HCParser>)stringParser {
+    return [HCStringParser new];
 }
 
 @end
