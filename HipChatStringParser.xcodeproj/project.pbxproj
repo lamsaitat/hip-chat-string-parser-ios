@@ -386,7 +386,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lamsaitat..HipChatStringParserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "HipChatStringParser/sources/HipChatStringParserTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = HipChatStringParser/headers/BridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HipChatStringParser.app/HipChatStringParser";
 			};
@@ -401,7 +401,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lamsaitat..HipChatStringParserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "HipChatStringParser/sources/HipChatStringParserTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = HipChatStringParser/headers/BridgingHeader.h;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HipChatStringParser.app/HipChatStringParser";
 			};
 			name = Release;
