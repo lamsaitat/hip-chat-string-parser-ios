@@ -10,6 +10,6 @@
 #define BridgingHeader_h
 
 #import "HCStubStringParser.h"
-
+#import "HCParserFactory.h"
 
 #endif /* BridgingHeader_h */
