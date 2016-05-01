@@ -110,7 +110,7 @@ class HipChatLinkTests: XCTestCase {
         XCTAssertTrue(NSDictionary(dictionary: link.dictionary).isEqualToDictionary(expectedDict))
     }
     
-    func LinkObjectToDictionaryWithInvalidValues1() {
+    func testLinkObjectToDictionaryWithInvalidValues1() {
         let inputDict = [
             kHCParserDictionaryUrlKey: [NSURL(string: "https://www.google.com")!],
             kHCParserDictionaryTitleKey: "Google"
@@ -127,7 +127,7 @@ class HipChatLinkTests: XCTestCase {
         XCTAssertTrue(NSDictionary(dictionary: link.dictionary).isEqualToDictionary(expectedDict))
     }
 
-    func LinkObjectToDictionaryWithInvalidValues2() {
+    func testLinkObjectToDictionaryWithInvalidValues2() {
         let inputDict = [
             kHCParserDictionaryUrlKey: NSURL(string: "https://www.google.com")!,
             kHCParserDictionaryTitleKey: ["Google"]
