@@ -28,21 +28,25 @@ class HipChatStringParserFetchingUrlLinksTests: XCTestCase {
         let expectedResult = "Google"
         let expectation = expectationWithDescription("GET \(url)")
         
-        let task = parser!.pageTitleForURL(
-            url!,
-            completionBlock: { (pageTitle: String?, error: NSError?) in
-                
-                XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! == expectedResult)
-                expectation.fulfill()
-            }
-        )
-        
-        waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval, handler: { (error: NSError?) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-            }
-            task.cancel()
-        })
+        if url != nil {
+            let task = parser!.pageTitleForURL(
+                url!,
+                completionBlock: { (pageTitle: String?, error: NSError?) in
+                    
+                    XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! == expectedResult)
+                    expectation.fulfill()
+                }
+            )
+            
+            waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval, handler: { (error: NSError?) in
+                if let error = error {
+                    print("Error: \(error.localizedDescription)")
+                }
+                task.cancel()
+            })
+        } else {
+            XCTFail("Test failed due to invalid url.  (NSURL initialiser returns nil)")
+        }
     }
     
     func testPageTitleFetchingWithLongerPageTitle() {
@@ -51,20 +55,24 @@ class HipChatStringParserFetchingUrlLinksTests: XCTestCase {
         let expectedResult = "XCTestCase / XCTestExpectation /  measureBlock() - NSHipster"
         let expectation = expectationWithDescription("GET \(url)")
         
-        let task = parser!.pageTitleForURL(
-            url!,
-            completionBlock: { (pageTitle: String?, error: NSError?) in
-                
-                XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! == expectedResult)
-                expectation.fulfill()
+        if url != nil {
+            let task = parser!.pageTitleForURL(
+                url!,
+                completionBlock: { (pageTitle: String?, error: NSError?) in
+                    
+                    XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! == expectedResult)
+                    expectation.fulfill()
+                }
+            )
+            
+            waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval) { error in
+                if let error = error {
+                    print("Error: \(error.localizedDescription)")
+                }
+                task.cancel()
             }
-        )
-        
-        waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval) { error in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-            }
-            task.cancel()
+        } else {
+            XCTFail("Test failed due to invalid url.  (NSURL initialiser returns nil)")
         }
     }
     
@@ -78,24 +86,28 @@ class HipChatStringParserFetchingUrlLinksTests: XCTestCase {
         let atlassianProvidedExpectedResult = "NBC Olympics | 2014 NBC Olympics in Sochi Russia"
         let expectation = expectationWithDescription("GET \(url)")
         
-        let task = parser!.pageTitleForURL(
-            url!,
-            completionBlock: { (pageTitle: String?, error: NSError?) in
-                
-                XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! == expectedResult)
-                // As of 2016-05-01 the page has updated it's title from 2014 Sochi Winter Olympics
-                // to 2016 Rio Olympics
-                XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! != atlassianProvidedExpectedResult)
-                expectation.fulfill()
-            }
-        )
-        
-        waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval, handler: { (error: NSError?) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-            }
-            task.cancel()
-        })
+        if url != nil {
+            let task = parser!.pageTitleForURL(
+                url!,
+                completionBlock: { (pageTitle: String?, error: NSError?) in
+                    
+                    XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! == expectedResult)
+                    // As of 2016-05-01 the page has updated it's title from 2014 Sochi Winter Olympics
+                    // to 2016 Rio Olympics
+                    XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! != atlassianProvidedExpectedResult)
+                    expectation.fulfill()
+                }
+            )
+            
+            waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval, handler: { (error: NSError?) in
+                if let error = error {
+                    print("Error: \(error.localizedDescription)")
+                }
+                task.cancel()
+            })
+        } else {
+            XCTFail("Test failed due to invalid url.  (NSURL initialiser returns nil)")
+        }
     }
     
     func testPageTitleFetchingWithAtlassianTestCase4() {
@@ -105,25 +117,29 @@ class HipChatStringParserFetchingUrlLinksTests: XCTestCase {
         let atlassianProvidedExpectedResult = "Twitter / jdorfman: nice @littlebigdetail from ..."
         let expectation = expectationWithDescription("GET \(url)")
         
-        let task = parser!.pageTitleForURL(
-            url!,
-            completionBlock: { (pageTitle: String?, error: NSError?) in
-                
-                XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! == expectedResult)
-                // As of 2016-05-01
-                // The page title provided in the specs is truncated, and actually 
-                // Twitter has changed the page title, that is actually incorrect 
-                // from the result's POV.
-                XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! != atlassianProvidedExpectedResult)
-                expectation.fulfill()
-            }
-        )
-        
-        waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval, handler: { (error: NSError?) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-            }
-            task.cancel()
-        })
+        if url != nil {
+            let task = parser!.pageTitleForURL(
+                url!,
+                completionBlock: { (pageTitle: String?, error: NSError?) in
+                    
+                    XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! == expectedResult)
+                    // As of 2016-05-01
+                    // The page title provided in the specs is truncated, and actually 
+                    // Twitter has changed the page title, that is actually incorrect 
+                    // from the result's POV.
+                    XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! != atlassianProvidedExpectedResult)
+                    expectation.fulfill()
+                }
+            )
+            
+            waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval, handler: { (error: NSError?) in
+                if let error = error {
+                    print("Error: \(error.localizedDescription)")
+                }
+                task.cancel()
+            })
+        } else {
+            XCTFail("Test failed due to invalid url.  (NSURL initialiser returns nil)")
+        }
     }
 }
