@@ -20,12 +20,19 @@ class InputStringListViewController: UITableViewController {
     static let identifier = "InputStringListViewController"
     static let preDefinedInputStringCellIdentifier = "InputStringCell"
     
+    lazy var parser: HCParser = {
+        let _parser = HCParserFactory.urlFetchingParser()
+        return _parser
+    }()
+    
     var inputStrings: [String] = [
         "@chris you around?",
         "Good morning! (megusta) (coffee)",
         "Olympics are starting soon;http://www.nbcolympics.com",
         "@bob @john (success) such a cool feature; https://twitter.com/jdorfman/status/430511497475670016"
     ]
+    
+    var selectedInputString: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,15 +134,30 @@ class InputStringListViewController: UITableViewController {
             customInputCell.inputTextField.resignFirstResponder()
         }
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == InputStringListSection.PreDefined.rawValue {
+            let inputString = inputStrings[indexPath.row]
+            
+            displayMessageViewWithInputString(inputString)
+        }
+    }
+    
+    func displayMessageViewWithInputString(inputString: String) {
+        selectedInputString = inputString
+        performSegueWithIdentifier(InputStringListToMessageSegue, sender: self)
+    }
 
-        /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let vc = segue.destinationViewController as? MessageViewController where segue.identifier == InputStringListToMessageSegue && selectedInputString != nil {
+            let dictionary = parser.dictionaryFromString!(selectedInputString!)
+            let message = HCMessage(dictionary: dictionary)
+            message.chatMessage = selectedInputString
+            vc.message = message
+        }
     }
-    */
-
 }
