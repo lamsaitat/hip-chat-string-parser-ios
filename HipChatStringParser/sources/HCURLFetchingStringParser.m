@@ -82,19 +82,4 @@
     return tasks;
 }
 
-- (NSURLSessionDataTask * __nullable)dictionaryFromString:(NSString * __nullable)sourceString completionBlock:(nullable void(^)(NSDictionary * __nullable, NSError * __nullable))completionBlock {
-    NSURLSessionDataTask *dataTask = nil;
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    
-    // TODO: implement the logic to parse the string with parsers combined.
-    
-    if (dataTask == nil) {
-        if (completionBlock) {
-            completionBlock(dict, nil);
-        }
-    }
-    
-    return dataTask;
-}
-
 @end

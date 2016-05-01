@@ -140,63 +140,55 @@ class HipChatStringParserDictionaryTests: XCTestCase {
         let inputString: String? = nil
         let expectation = expectationWithDescription("Parse \(inputString)")
         
-        let task = parser!.dictionaryFromString(
-            inputString,
-            completionBlock: { (dict: [NSObject : AnyObject]?, error: NSError?) in
-                XCTAssertNotNil(dict)
-                XCTAssertTrue(dict!.isEmpty)  // Should return empty dictionary.
+        let resultDict = parser!.dictionaryFromString(inputString)
+        
+        XCTAssertNotNil(resultDict)
+        
+        let tasks = parser!.fetchPageTitlesWithDictionary(
+            resultDict,
+            completionBlock: { (completedDict: [NSObject : AnyObject], error: NSError?) in
+                XCTAssertNotNil(completedDict)
+                XCTAssertTrue(completedDict.isEmpty)
                 
                 expectation.fulfill()
             }
         )
         
-        if task != nil {
-            waitForExpectationsWithTimeout(task!.originalRequest!.timeoutInterval, handler: { (error: NSError?) in
-                if let error = error {
-                    print("Error: \(error.localizedDescription)")
-                }
-                task!.cancel()
-            })
-        } else {
-            // If there is no task then timeout after 10s...  
-            // It should return immediately anyway.
-            waitForExpectationsWithTimeout(10, handler: { (error: NSError?) in
-                if let error = error {
-                    print("Error: \(error.localizedDescription)")
-                }
-            })
-        }
+        XCTAssertNotNil(tasks)
+        XCTAssertTrue(tasks.isEmpty)   // We are pretty sure no tasks were created.
+        
+        waitForExpectationsWithTimeout(10, handler: { (error: NSError?) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+        })
     }
     
     func testAsyncDictionaryWithEmptyString() {
         let inputString: String? = ""
         let expectation = expectationWithDescription("Parse \(inputString)")
         
-        let task = parser!.dictionaryFromString(
-            inputString,
-            completionBlock: { (dict: [NSObject : AnyObject]?, error: NSError?) in
-                XCTAssertNotNil(dict)
-                XCTAssertTrue(dict!.isEmpty)  // Should return empty dictionary.
+        let resultDict = parser!.dictionaryFromString(inputString)
+        
+        XCTAssertNotNil(resultDict)
+        
+        let tasks = parser!.fetchPageTitlesWithDictionary(
+            resultDict,
+            completionBlock: { (completedDict: [NSObject : AnyObject], error: NSError?) in
+                XCTAssertNotNil(completedDict)
+                XCTAssertTrue(completedDict.isEmpty)
                 
                 expectation.fulfill()
             }
         )
         
-        if task != nil {
-            waitForExpectationsWithTimeout(task!.originalRequest!.timeoutInterval, handler: { (error: NSError?) in
-                if let error = error {
-                    print("Error: \(error.localizedDescription)")
-                }
-                task!.cancel()
-            })
-        } else {
-            // If there is no task then timeout after 10s...
-            // It should return immediately anyway.
-            waitForExpectationsWithTimeout(10, handler: { (error: NSError?) in
-                if let error = error {
-                    print("Error: \(error.localizedDescription)")
-                }
-            })
-        }
+        XCTAssertNotNil(tasks)
+        XCTAssertTrue(tasks.isEmpty)   // We are pretty sure no tasks were created.
+        
+        waitForExpectationsWithTimeout(10, handler: { (error: NSError?) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+        })
     }
 }

@@ -70,8 +70,6 @@ extern NSString *kHCParserDictionaryTitleKey;
  */
 - (NSArray<NSURLSessionDataTask *> *__nonnull)fetchPageTitlesWithDictionary:(NSDictionary *)sourceDictionary completionBlock:(nullable void(^)(NSDictionary * __nonnull, NSError * __nullable))completionBlock;
 
-- (NSURLSessionDataTask * __nullable)dictionaryFromString:(NSString * __nullable)sourceString completionBlock:(nullable void(^)(NSDictionary * __nullable, NSError * __nullable))completionBlock;
-
 @end
 
 #pragma clang diagnostic pop
