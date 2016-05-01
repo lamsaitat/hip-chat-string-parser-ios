@@ -9,11 +9,17 @@
 #ifndef HCParser_h
 #define HCParser_h
 
-@protocol HCParser <NSObject>
-
 // Don't need to warn us about other methods not giving nullability...
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wnullability-completeness"
+
+extern NSString *kHCParserDictionaryMentionsKey;
+extern NSString *kHCParserDictionaryEmoticonsKey;
+extern NSString *kHCParserDictionaryLinksKey;
+extern NSString *kHCParserDictionaryUrlKey;
+extern NSString *kHCParserDictionaryTitleKey;
+
+@protocol HCParser <NSObject>
 
 /**
  * Detects all user mention of @XXXX pattern from a given string.
@@ -53,9 +59,8 @@
 
 - (NSURLSessionDataTask * __nullable)dictionaryFromString:(NSString * __nullable)sourceString completionBlock:(nullable void(^)(NSDictionary * __nullable, NSError * __nullable))completionBlock;
 
-#pragma clang diagnostic pop
-
 @end
 
+#pragma clang diagnostic pop
 
 #endif /* HCParser_h */

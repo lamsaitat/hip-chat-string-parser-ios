@@ -8,6 +8,12 @@
 
 #import "HCStringParser.h"
 
+NSString *kHCParserDictionaryMentionsKey = @"mentions";
+NSString *kHCParserDictionaryEmoticonsKey = @"emoticons";
+NSString *kHCParserDictionaryLinksKey = @"links";
+NSString *kHCParserDictionaryUrlKey = @"url";
+NSString *kHCParserDictionaryTitleKey = @"title";
+
 @implementation HCStringParser
 
 /** This method does not guarantee the elements are unique.
