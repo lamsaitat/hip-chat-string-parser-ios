@@ -65,9 +65,7 @@ class InputStringListViewController: UITableViewController {
         case 0:
             return self.tableView(tableView, preDefinedInputStringCellForRowAtIndexPath: indexPath)
         default:
-            // This is the worst case scenario, but show a meaningless cell is better than allow the app to crash...
-            let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-            return cell
+            return self.tableView(tableView, fallbackCellForRowAtIndexPath: indexPath)
         }
     }
     
@@ -77,6 +75,12 @@ class InputStringListViewController: UITableViewController {
         
         cell.textLabel?.text = inputString
         
+        return cell
+    }
+    
+    private func tableView(tableView: UITableView, fallbackCellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        // This is the worst case scenario, but show a meaningless cell is better than allow the app to crash...
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
         return cell
     }
 
