@@ -69,4 +69,12 @@
     return dataTask;
 }
 
+- (NSURLSessionDataTask * __nullable)dictionaryFromString:(NSString * __nullable)sourceString completionBlock:(nullable void(^)(NSDictionary * __nullable, NSError * __nullable))completionBlock {
+    NSURLSessionDataTask *dataTask = nil;
+    
+    // TODO: implement the logic to parse the string with parsers combined.
+    
+    return dataTask;
+}
+
 @end

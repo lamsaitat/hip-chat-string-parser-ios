@@ -42,6 +42,11 @@
 
 - (NSURLSessionDataTask *)pageTitleForURL:(NSURL * __nonnull)url completionBlock:(nullable void(^)(NSString * __nullable, NSError * __nullable))completionBlock;
 
+
+#pragma mark - HipChat combined parsers.
+
+- (NSURLSessionDataTask * __nullable)dictionaryFromString:(NSString * __nullable)sourceString completionBlock:(nullable void(^)(NSDictionary * __nullable, NSError * __nullable))completionBlock;
+
 @end
 
 
