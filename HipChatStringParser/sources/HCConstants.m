@@ -13,9 +13,3 @@ NSString *kHCParserDictionaryEmoticonsKey = @"emoticons";
 NSString *kHCParserDictionaryLinksKey = @"links";
 NSString *kHCParserDictionaryUrlKey = @"url";
 NSString *kHCParserDictionaryTitleKey = @"title";
-
-@implementation HCConstants
-
-
-
-@end

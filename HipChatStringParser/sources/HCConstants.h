@@ -13,9 +13,3 @@ extern NSString *kHCParserDictionaryEmoticonsKey;
 extern NSString *kHCParserDictionaryLinksKey;
 extern NSString *kHCParserDictionaryUrlKey;
 extern NSString *kHCParserDictionaryTitleKey;
-
-@interface HCConstants : NSObject
-
-
-
-@end
