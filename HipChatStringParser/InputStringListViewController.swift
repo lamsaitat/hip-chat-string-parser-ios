@@ -34,7 +34,7 @@ class InputStringListViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,6 +64,8 @@ class InputStringListViewController: UITableViewController {
         switch indexPath.section {
         case 0:
             return self.tableView(tableView, preDefinedInputStringCellForRowAtIndexPath: indexPath)
+        case 1:
+            return self.tableView(tableView, customInputStringCellForRowAtIndexPath: indexPath)
         default:
             return self.tableView(tableView, fallbackCellForRowAtIndexPath: indexPath)
         }
@@ -76,6 +78,35 @@ class InputStringListViewController: UITableViewController {
         cell.textLabel?.text = inputString
         
         return cell
+    }
+    
+    private func tableView(tableView: UITableView, customInputStringCellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCellWithIdentifier(CustomInputStringCell.identifier, forIndexPath: indexPath) as? CustomInputStringCell {
+        
+            cell.parseActionBlock = { (inputString: String?) in
+                if inputString != nil && inputString!.isEmpty == false {
+                    let alert = UIAlertController(
+                        title: "Parse coming soon.",
+                        message: "Soon I can parse \"\(inputString!)\".",
+                        preferredStyle: .Alert
+                    )
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(
+                        title: "Sorry",
+                        message: "You have not enter anything to parse.",
+                        preferredStyle: .Alert
+                    )
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+            }
+        
+            return cell
+        } else {
+            return self.tableView(tableView, fallbackCellForRowAtIndexPath: indexPath)
+        }
     }
     
     private func tableView(tableView: UITableView, fallbackCellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
