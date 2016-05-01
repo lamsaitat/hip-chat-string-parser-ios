@@ -72,11 +72,41 @@
 }
 
 - (NSArray<NSURLSessionDataTask *> *__nonnull)fetchPageTitlesWithMessage:(HCMessage *)sourceMessage completionBlock:(nullable void(^)(HCMessage * __non_null, NSError * __nullable))completionBlock {
-    NSMutableArray *tasks = [NSMutableArray array];
+    __block NSMutableArray *tasks = [NSMutableArray array];
+    __block typeof(sourceMessage) blockMessage = sourceMessage;
     
-    // TODO: implement the logic to parse the string with parsers combined.
-    if (completionBlock) {
-        completionBlock(sourceMessage, nil);
+    if (sourceMessage.links.count == 0) {
+        if (completionBlock) {
+            completionBlock(sourceMessage, nil);
+        }
+    } else {
+        for (HCLink *link in blockMessage.links) {
+            __block typeof(link) blockLink = link;
+            
+            if (link.url) {
+                NSURLSessionDataTask *task = [self pageTitleForURL:link.url completionBlock:^(NSString * _Nullable title, NSError * _Nullable pageTitleFetchError) {
+                    if (pageTitleFetchError == nil && title) {
+                        blockLink.title = title;
+                    }
+                    
+                    // Check if any task is still active.
+                    BOOL hasActiveTasks = NO;
+                    for (NSURLSessionDataTask *leTask in tasks) {
+                        hasActiveTasks = leTask.state == NSURLSessionTaskStateRunning;
+
+                        if (hasActiveTasks) {
+                            break;
+                        }
+                    }
+                    if (hasActiveTasks == NO) {
+                        if (completionBlock) {
+                            completionBlock(blockMessage, pageTitleFetchError);
+                        }
+                    }
+                }];
+                [tasks addObject:task];
+            }
+        }
     }
     
     return tasks;
