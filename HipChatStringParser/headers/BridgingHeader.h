@@ -21,6 +21,8 @@
 
 // Libraries
 #import "GDataXMLNode.h"
+//#import <GDataXML-HTML/GDataXMLNode.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+#import <Reachability/Reachability.h>
 
 #endif /* BridgingHeader_h */
