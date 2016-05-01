@@ -95,7 +95,7 @@ class InputStringListViewController: UITableViewController {
                 } else {
                     let alert = UIAlertController(
                         title: "Sorry",
-                        message: "You have not enter anything to parse.",
+                        message: "You have not entered anything to parse.",
                         preferredStyle: .Alert
                     )
                     alert.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: nil))
