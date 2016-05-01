@@ -99,13 +99,7 @@ class InputStringListViewController: UITableViewController {
         
             cell.parseActionBlock = { (inputString: String?) in
                 if inputString != nil && inputString!.isEmpty == false {
-                    let alert = UIAlertController(
-                        title: "Parse coming soon.",
-                        message: "Soon I can parse \"\(inputString!)\".",
-                        preferredStyle: .Alert
-                    )
-                    alert.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: nil))
-                    self.presentViewController(alert, animated: true, completion: nil)
+                    self.displayMessageViewWithInputString(inputString!)
                 } else {
                     let alert = UIAlertController(
                         title: "Sorry",
