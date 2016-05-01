@@ -62,6 +62,33 @@ class HipChatStringParserDictionaryTests: XCTestCase {
         }
     }
     
+    func testDictinoaryWithSimpleStringEmoticonsOnly1() {
+        let inputString = "(jonsnow) is still dead."
+        let expectedDict = [kHCParserDictionaryEmoticonsKey: ["jonsnow"]]
+        let parserResults = parser!.dictionaryFromString(inputString)
+        
+        XCTAssertTrue(NSDictionary(dictionary: parserResults).isEqualToDictionary(NSDictionary(dictionary: expectedDict) as [NSObject : AnyObject]))
+    }
+    
+    func testDictinoaryWithCombinedStringOfMentionsAndEmoticons1() {
+        let inputString = "@jonsnow looks like this (jonsnow). He knows nothing."
+        let expectedDict = [
+            kHCParserDictionaryMentionsKey: ["jonsnow"],
+            kHCParserDictionaryEmoticonsKey: ["jonsnow"]
+        ]
+        let parserResults = parser!.dictionaryFromString(inputString)
+        
+        // Turns out comparing the json object byte is not an accurate comparison
+        // as Dictionary's key order can be different and the json string will 
+        // therefore not be the same.
+        // After some research the simplest way to compare dictionaries is to 
+        // cast them back to NSDictionary objects as <NSCoding, NSObject>, 
+        // the isEqualToDictionary: can then compare the key-value pair without
+        // considerations of the key's order.
+        // Ref: http://stackoverflow.com/a/32366918
+        XCTAssertTrue(NSDictionary(dictionary: parserResults).isEqualToDictionary(NSDictionary(dictionary: expectedDict) as [NSObject : AnyObject]))
+    }
+    
     
     // MARK: - Asynchronously fetching the url and return the dictionary only if the page title fetching request returns.
     
