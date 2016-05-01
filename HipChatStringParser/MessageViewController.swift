@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class MessageViewController: UIViewController {
     
@@ -39,16 +40,23 @@ class MessageViewController: UIViewController {
     
     private func fetchPageTitleIfRequired() {
         if message?.links.count > 0 {
+            let hud = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().windows.first, animated: true)
+            hud.labelText = "Loading..."
             parser.fetchPageTitlesWithMessage!(
                 message,
                 completionBlock: { (returningMessage: HCMessage!, error: NSError?) in
+                    
                     if error == nil {
                         self.message = returningMessage
                         
-                        dispatch_async(dispatch_get_main_queue(), { 
+                        dispatch_async(dispatch_get_main_queue(), {
                             self.updateContentText()
                         })
                     }
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        hud.hide(true)
+                    })
                 }
             )
         }
