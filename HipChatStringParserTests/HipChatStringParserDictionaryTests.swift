@@ -16,9 +16,58 @@ class HipChatStringParserDictionaryTests: XCTestCase {
         parser = HCURLFetchingStringParser()
     }
     
-    // MARK: - Error handling.
+    
+    // MARK: - Base dictionary test cases.
+    
+    // MARK: Error handling.
     
     func testDictionaryWithNilString() {
+        let inputString: String? = nil
+        
+        let parserResults = parser!.dictionaryFromString(inputString)
+        
+        XCTAssertTrue(parserResults.isEmpty)
+    }
+    
+    func testDictionaryWithEmptyString() {
+        let inputString: String? = ""
+        
+        let parserResults = parser!.dictionaryFromString(inputString)
+        
+        XCTAssertTrue(parserResults.isEmpty)
+    }
+    
+    
+    // MARK: - Test for valid input
+    
+    func testDictionaryWithSimpleStringMentionOnly1() {
+        let inputString = "@bruceWyane is Batman."
+        let expectedDict = [kHCParserDictionaryMentionsKey: ["bruceWyane"]]
+        let parserResults = parser!.dictionaryFromString(inputString)
+        
+        // The best way to compare the results is to turn them into JSON data
+        // with consistent JSON write options.
+        do {
+            let expectedJsonData = try NSJSONSerialization.dataWithJSONObject(expectedDict, options: .PrettyPrinted)
+            let resultsJsonData = try NSJSONSerialization.dataWithJSONObject(parserResults, options: .PrettyPrinted)
+            
+            // Because NSData is objective-c class, therefore I prefer to use 
+            // the good old isEqual method to compare data as specified in the 
+            // Apple doc:
+            // Two data objects are equal if they hold the same number of bytes, and if the bytes at the same position in the objects are the same.
+            // https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/#//apple_ref/occ/instm/NSData/isEqualToData:
+            XCTAssertTrue(expectedJsonData.isEqualToData(resultsJsonData))
+        } catch _ {
+            XCTFail("Test case failed due to failing to serialise either the expectedDict or results into json data.")
+        }
+    }
+    
+    
+    // MARK: - Asynchronously fetching the url and return the dictionary only if the page title fetching request returns.
+    
+    // MARK: - Error handling.
+    
+    func testAsyncDictionaryWithNilString() {
         let inputString: String? = nil
         let expectation = expectationWithDescription("Parse \(inputString)")
         
@@ -50,7 +99,7 @@ class HipChatStringParserDictionaryTests: XCTestCase {
         }
     }
     
-    func testDictionaryWithEmptyString() {
+    func testAsyncDictionaryWithEmptyString() {
         let inputString: String? = ""
         let expectation = expectationWithDescription("Parse \(inputString)")
         
