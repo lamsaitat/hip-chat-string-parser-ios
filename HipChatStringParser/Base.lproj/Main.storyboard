@@ -48,6 +48,44 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CustomInputStringCell" id="55y-hd-2NW" customClass="CustomInputStringCell" customModule="HipChatStringParser" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="180" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="55y-hd-2NW" id="okF-EL-gUZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your own input string" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GTW-iS-gzP">
+                                            <rect key="frame" x="15" y="5" width="495" height="33.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w86-bd-P8O">
+                                            <rect key="frame" x="525" y="7" width="60" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="Imn-K8-Gk9"/>
+                                                <constraint firstAttribute="width" constant="60" id="fc3-6K-iOB"/>
+                                            </constraints>
+                                            <state key="normal" title="Parse it!"/>
+                                            <connections>
+                                                <action selector="parseButtonTouchUpInside:" destination="55y-hd-2NW" eventType="touchUpInside" id="jv8-5d-jjH"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="w86-bd-P8O" firstAttribute="leading" secondItem="GTW-iS-gzP" secondAttribute="trailing" constant="15" id="59t-Pr-aAc"/>
+                                        <constraint firstAttribute="bottom" secondItem="GTW-iS-gzP" secondAttribute="bottom" constant="5" id="CYh-fq-K4G"/>
+                                        <constraint firstItem="GTW-iS-gzP" firstAttribute="top" secondItem="okF-EL-gUZ" secondAttribute="top" constant="5" id="PYW-48-Ra0"/>
+                                        <constraint firstItem="GTW-iS-gzP" firstAttribute="leading" secondItem="okF-EL-gUZ" secondAttribute="leading" constant="15" id="RCX-Gd-UqS"/>
+                                        <constraint firstAttribute="trailing" secondItem="w86-bd-P8O" secondAttribute="trailing" constant="15" id="jsC-lX-4FU"/>
+                                        <constraint firstItem="w86-bd-P8O" firstAttribute="centerY" secondItem="okF-EL-gUZ" secondAttribute="centerY" id="vek-8V-49d"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="inputTextField" destination="GTW-iS-gzP" id="rwx-V9-vds"/>
+                                    <outlet property="parseButton" destination="w86-bd-P8O" id="QfU-wS-gTh"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="tQe-6q-1lb" id="P8f-VG-69W"/>
