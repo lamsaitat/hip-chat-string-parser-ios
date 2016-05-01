@@ -114,15 +114,21 @@
 
 - (NSArray<NSURLSessionDataTask *> *__nonnull)fetchPageTitlesWithDictionary:(NSDictionary *)sourceDictionary completionBlock:(nullable void(^)(NSDictionary * __nonnull, NSError * __nullable))completionBlock {
     
-    NSMutableArray *tasks = [NSMutableArray array];
-    NSMutableDictionary *dict = [sourceDictionary mutableCopy];
+    HCMessage *srcMessage = [[HCMessage alloc] initWithDictionary:sourceDictionary];
     
-    // TODO: implement the logic to parse the string with parsers combined.
-    if (completionBlock) {
-        completionBlock(dict, nil);
+    if (srcMessage) {
+        return [self fetchPageTitlesWithMessage:srcMessage completionBlock:^(HCMessage *completedMessage, NSError * _Nullable error) {
+            if (completionBlock) {
+                completionBlock(completedMessage.dictionary, error);
+            }
+        }];
+
+    } else {
+        if (completionBlock) {
+            completionBlock(@{}, nil);  // A nil message object will give back an empty dictionary, because technically there is no urls contained within.
+        }
+        return [NSMutableArray array];
     }
-    
-    return tasks;
 }
 
 @end
