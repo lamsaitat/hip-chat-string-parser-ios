@@ -41,8 +41,8 @@ class HipChatStringParserDictionaryTests: XCTestCase {
     // MARK: - Test for valid input
     
     func testDictionaryWithSimpleStringMentionOnly1() {
-        let inputString = "@bruceWyane is Batman."
-        let expectedDict = [kHCParserDictionaryMentionsKey: ["bruceWyane"]]
+        let inputString = "@bruceWayne is Batman."
+        let expectedDict = [kHCParserDictionaryMentionsKey: ["bruceWayne"]]
         let parserResults = parser!.dictionaryFromString(inputString)
         
         // The best way to compare the results is to turn them into JSON data

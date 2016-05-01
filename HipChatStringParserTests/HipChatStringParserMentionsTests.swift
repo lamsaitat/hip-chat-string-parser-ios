@@ -43,8 +43,8 @@ class HipChatStringParserMentionsTests: XCTestCase {
     
     
     func testMentionsArrayWithSimpleValidString1() {
-        let inputString = "@bruceWyane is Batman."
-        let expectedResults = ["bruceWyane"]
+        let inputString = "@bruceWayne is Batman."
+        let expectedResults = ["bruceWayne"]
         let parsedResults = parser!.mentionsFromString(inputString)
         
         XCTAssertTrue(Set(parsedResults).elementsEqual(Set(expectedResults)))
