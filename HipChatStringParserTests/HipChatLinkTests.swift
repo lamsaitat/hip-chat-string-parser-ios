@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import HipChatStringParser
 
 class HipChatLinkTests: XCTestCase {
 
@@ -15,21 +16,51 @@ class HipChatLinkTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testInitWithDictionaryWithEmptyDictionary() {
+        let inputDict = [String: AnyObject]()
+        
+        let link = HCLink(dictionary: inputDict)
+        
+        XCTAssertNotNil(link)
+        XCTAssertNil(link.url)
+        XCTAssertNil(link.title)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testInitWithDictionaryWithNilDictionary() {
+        
+        let link = HCLink(dictionary: nil)
+        
+        XCTAssertNotNil(link)
+        XCTAssertNil(link.url)
+        XCTAssertNil(link.title)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testInitWithDictionaryWithValidDictionary1() {
+        let inputDict = [
+            kHCParserDictionaryUrlKey: "https://www.google.com",
+            kHCParserDictionaryTitleKey: "Google"
+        ]
+        
+        let link = HCLink(dictionary: inputDict)
+        
+        XCTAssertNotNil(link)
+        XCTAssertNotNil(link.url)
+        XCTAssertNotNil(link.title)
+        XCTAssertTrue(link.url == NSURL(string: inputDict[kHCParserDictionaryUrlKey]!)!)
+    }
+    
+    func testInitWithDictionryWithValidDictionary2() {
+        let inputDict = [
+            kHCParserDictionaryUrlKey: NSURL(string: "https://www.google.com")!,
+            kHCParserDictionaryTitleKey: "Google"
+        ]
+        
+        let link = HCLink(dictionary: inputDict)
+        
+        XCTAssertNotNil(link)
+        XCTAssertNotNil(link.url)
+        XCTAssertNotNil(link.title)
+        XCTAssertTrue(link.url == inputDict[kHCParserDictionaryUrlKey]!)
     }
 
 }
