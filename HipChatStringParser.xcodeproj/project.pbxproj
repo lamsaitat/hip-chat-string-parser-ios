@@ -33,6 +33,14 @@
 		CB0049D81CD623B900594CEE /* HCLink.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0049D61CD623B900594CEE /* HCLink.m */; };
 		CB0049DD1CD62ACE00594CEE /* HipChatLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049DC1CD62ACE00594CEE /* HipChatLinkTests.swift */; };
 		CB0049DF1CD6305600594CEE /* HipChatMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049DE1CD6305600594CEE /* HipChatMessageTests.swift */; };
+		CB0049E51CD6562000594CEE /* case1.json in Resources */ = {isa = PBXBuildFile; fileRef = CB0049E11CD6562000594CEE /* case1.json */; };
+		CB0049E61CD6562000594CEE /* case1.json in Resources */ = {isa = PBXBuildFile; fileRef = CB0049E11CD6562000594CEE /* case1.json */; };
+		CB0049E71CD6562000594CEE /* case2.json in Resources */ = {isa = PBXBuildFile; fileRef = CB0049E21CD6562000594CEE /* case2.json */; };
+		CB0049E81CD6562000594CEE /* case2.json in Resources */ = {isa = PBXBuildFile; fileRef = CB0049E21CD6562000594CEE /* case2.json */; };
+		CB0049E91CD6562000594CEE /* case3.json in Resources */ = {isa = PBXBuildFile; fileRef = CB0049E31CD6562000594CEE /* case3.json */; };
+		CB0049EA1CD6562000594CEE /* case3.json in Resources */ = {isa = PBXBuildFile; fileRef = CB0049E31CD6562000594CEE /* case3.json */; };
+		CB0049EB1CD6562000594CEE /* case4.json in Resources */ = {isa = PBXBuildFile; fileRef = CB0049E41CD6562000594CEE /* case4.json */; };
+		CB0049EC1CD6562000594CEE /* case4.json in Resources */ = {isa = PBXBuildFile; fileRef = CB0049E41CD6562000594CEE /* case4.json */; };
 		CBFFC6111CD515280029D560 /* HCURLFetchingStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFFC6101CD515280029D560 /* HCURLFetchingStringParser.m */; };
 		CBFFC6121CD515280029D560 /* HCURLFetchingStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFFC6101CD515280029D560 /* HCURLFetchingStringParser.m */; };
 		CBFFC6141CD51B090029D560 /* HipChatStringParserFetchingUrlLinksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFFC6131CD51B090029D560 /* HipChatStringParserFetchingUrlLinksTests.swift */; };
@@ -83,6 +91,10 @@
 		CB0049D91CD623ED00594CEE /* HCObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCObject.h; sourceTree = "<group>"; };
 		CB0049DC1CD62ACE00594CEE /* HipChatLinkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChatLinkTests.swift; sourceTree = "<group>"; };
 		CB0049DE1CD6305600594CEE /* HipChatMessageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChatMessageTests.swift; sourceTree = "<group>"; };
+		CB0049E11CD6562000594CEE /* case1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = case1.json; sourceTree = "<group>"; };
+		CB0049E21CD6562000594CEE /* case2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = case2.json; sourceTree = "<group>"; };
+		CB0049E31CD6562000594CEE /* case3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = case3.json; sourceTree = "<group>"; };
+		CB0049E41CD6562000594CEE /* case4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = case4.json; sourceTree = "<group>"; };
 		CBFFC60F1CD515280029D560 /* HCURLFetchingStringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCURLFetchingStringParser.h; sourceTree = "<group>"; };
 		CBFFC6101CD515280029D560 /* HCURLFetchingStringParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCURLFetchingStringParser.m; sourceTree = "<group>"; };
 		CBFFC6131CD51B090029D560 /* HipChatStringParserFetchingUrlLinksTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChatStringParserFetchingUrlLinksTests.swift; sourceTree = "<group>"; };
@@ -169,6 +181,7 @@
 		CB00498B1CD4A6A200594CEE /* HipChatStringParserTests */ = {
 			isa = PBXGroup;
 			children = (
+				CB0049E01CD6562000594CEE /* jsons */,
 				CB0049C61CD504FC00594CEE /* emoticons-list-newlined.txt */,
 				CB00498C1CD4A6A200594CEE /* HipChatStringParserMentionsTests.swift */,
 				CB0049C41CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift */,
@@ -219,6 +232,17 @@
 				CB0049D91CD623ED00594CEE /* HCObject.h */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		CB0049E01CD6562000594CEE /* jsons */ = {
+			isa = PBXGroup;
+			children = (
+				CB0049E11CD6562000594CEE /* case1.json */,
+				CB0049E21CD6562000594CEE /* case2.json */,
+				CB0049E31CD6562000594CEE /* case3.json */,
+				CB0049E41CD6562000594CEE /* case4.json */,
+			);
+			path = jsons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,8 +333,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB0049821CD4A6A200594CEE /* LaunchScreen.storyboard in Resources */,
+				CB0049EB1CD6562000594CEE /* case4.json in Resources */,
 				CB00497F1CD4A6A200594CEE /* Assets.xcassets in Resources */,
 				CB00497D1CD4A6A200594CEE /* Main.storyboard in Resources */,
+				CB0049E91CD6562000594CEE /* case3.json in Resources */,
+				CB0049E71CD6562000594CEE /* case2.json in Resources */,
+				CB0049E51CD6562000594CEE /* case1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +347,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB0049C71CD504FC00594CEE /* emoticons-list-newlined.txt in Resources */,
+				CB0049EA1CD6562000594CEE /* case3.json in Resources */,
+				CB0049E61CD6562000594CEE /* case1.json in Resources */,
+				CB0049EC1CD6562000594CEE /* case4.json in Resources */,
+				CB0049E81CD6562000594CEE /* case2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
