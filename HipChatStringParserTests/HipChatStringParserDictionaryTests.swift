@@ -89,6 +89,48 @@ class HipChatStringParserDictionaryTests: XCTestCase {
         XCTAssertTrue(NSDictionary(dictionary: parserResults).isEqualToDictionary(NSDictionary(dictionary: expectedDict) as [NSObject : AnyObject]))
     }
     
+    func testDictinoaryWithCombinedStringOfMentionsAndEmoticons2() {
+        let inputString = "Hey @jimmyk, wanna grab a (coffee)?"
+        let expectedDict = [
+            kHCParserDictionaryMentionsKey: ["jimmyk"],
+            kHCParserDictionaryEmoticonsKey: ["coffee"]
+        ]
+        let parserResults = parser!.dictionaryFromString(inputString)
+        
+        // Turns out comparing the json object byte is not an accurate comparison
+        // as Dictionary's key order can be different and the json string will
+        // therefore not be the same.
+        // After some research the simplest way to compare dictionaries is to
+        // cast them back to NSDictionary objects as <NSCoding, NSObject>,
+        // the isEqualToDictionary: can then compare the key-value pair without
+        // considerations of the key's order.
+        // Ref: http://stackoverflow.com/a/32366918
+        XCTAssertTrue(NSDictionary(dictionary: parserResults).isEqualToDictionary(NSDictionary(dictionary: expectedDict) as [NSObject : AnyObject]))
+    }
+    
+    func testDictinoaryWithCombinedStringOfMentionsAndEmoticonsAndLinksWithoutTitle1() {
+        // Note: This test case does not put in consideration of the page title.
+        let inputString = "Hey @jimmyk, I found the best (coffee) at http://thegrounds.com.au/"
+        let expectedDict = [
+            kHCParserDictionaryMentionsKey: ["jimmyk"],
+            kHCParserDictionaryEmoticonsKey: ["coffee"],
+            kHCParserDictionaryLinksKey: [
+                [kHCParserDictionaryUrlKey: "http://thegrounds.com.au/"]
+            ]
+        ]
+        let parserResults = parser!.dictionaryFromString(inputString)
+        
+        // Turns out comparing the json object byte is not an accurate comparison
+        // as Dictionary's key order can be different and the json string will
+        // therefore not be the same.
+        // After some research the simplest way to compare dictionaries is to
+        // cast them back to NSDictionary objects as <NSCoding, NSObject>,
+        // the isEqualToDictionary: can then compare the key-value pair without
+        // considerations of the key's order.
+        // Ref: http://stackoverflow.com/a/32366918
+        XCTAssertTrue(NSDictionary(dictionary: parserResults).isEqualToDictionary(NSDictionary(dictionary: expectedDict) as [NSObject : AnyObject]))
+    }
+    
     
     // MARK: - Asynchronously fetching the url and return the dictionary only if the page title fetching request returns.
     
