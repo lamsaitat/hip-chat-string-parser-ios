@@ -124,9 +124,32 @@ NSString *kHCParserDictionaryTitleKey = @"title";
 }
 
 - (NSDictionary *)dictionaryFromString:(NSString *)sourceString {
+    NSMutableDictionary *results = [NSMutableDictionary dictionary];
     
-    // TODO: Implement the logic to combine the parser together.
-    return [NSDictionary dictionary];
+    // Parse the mentions first.
+    NSArray *mentions = [self mentionsFromString:sourceString];
+    if (mentions && mentions.count > 0) {
+        results[kHCParserDictionaryMentionsKey] = mentions;
+    }
+    
+    NSArray *emoticons = [self emoticonsFromString:sourceString];
+    if (emoticons && emoticons.count > 0) {
+        results[kHCParserDictionaryEmoticonsKey] = emoticons;
+    }
+    
+    NSArray *links = [self urlLinksFromString:sourceString];
+    if (links && links.count > 0) {
+        NSMutableArray *linkDicts = [NSMutableArray array];
+        for (NSString *url in links) {
+            NSDictionary *linkDict = @{
+                                       kHCParserDictionaryUrlKey: url
+                                       };
+            [linkDicts addObject:linkDict];
+        }
+        results[kHCParserDictionaryLinksKey] = linkDicts;
+    }
+    
+    return results;
 }
 
 @end
