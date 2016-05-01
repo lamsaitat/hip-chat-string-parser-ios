@@ -191,4 +191,154 @@ class HipChatStringParserDictionaryTests: XCTestCase {
             }
         })
     }
+    
+    func testAsyncDictinoaryWithCombinedStringOfMentionsAndEmoticonsButLinkThatDoesNotResolve() {
+        let inputString = "Sorry @jimmyk, I can't load the site http://www.atlassiannn.com"
+        let expectedDictWithoutPageTitle = [
+            kHCParserDictionaryMentionsKey: ["jimmyk"],
+            kHCParserDictionaryLinksKey: [
+                [kHCParserDictionaryUrlKey: "http://www.atlassiannn.com"]
+            ]
+        ]
+        let parserResults = parser!.dictionaryFromString(inputString)
+        XCTAssertTrue(NSDictionary(dictionary: parserResults).isEqualToDictionary(NSDictionary(dictionary: expectedDictWithoutPageTitle) as [NSObject : AnyObject]))
+        
+        let parsedMessage = HCMessage(dictionary: parserResults)
+        let expectation = expectationWithDescription("Parse \(inputString)")
+        
+        let expectedDictWithPageTitle = [
+            kHCParserDictionaryMentionsKey: ["jimmyk"],
+            kHCParserDictionaryLinksKey: [
+                [
+                    kHCParserDictionaryUrlKey: "http://www.atlassiannn.com"
+                ]
+            ]
+        ]
+        
+        let tasks = parser!.fetchPageTitlesWithMessage(
+            parsedMessage,
+            completionBlock: { (completedMsg: HCMessage!, error: NSError?) in
+                XCTAssertTrue(NSDictionary(dictionary: completedMsg.dictionary).isEqualToDictionary(NSDictionary(dictionary: expectedDictWithPageTitle) as [NSObject : AnyObject]))
+                
+                expectation.fulfill()
+            }
+        )
+        
+        var maxTimeoutInterval = 5.0
+        for task in tasks {
+            maxTimeoutInterval += task.originalRequest!.timeoutInterval
+        }
+        
+        waitForExpectationsWithTimeout(maxTimeoutInterval) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+            for task in tasks {
+                task.cancel()
+            }
+        }
+    }
+    
+    
+    // MARK: - Test for valid cases with fetching
+    
+    func testAsyncDictinoaryWithCombinedStringOfMentionsAndEmoticonsAndLinks1() {
+        let inputString = "Hey @jimmyk, I found the best (coffee) at http://thegrounds.com.au/"
+        let expectedDictWithoutPageTitle = [
+            kHCParserDictionaryMentionsKey: ["jimmyk"],
+            kHCParserDictionaryEmoticonsKey: ["coffee"],
+            kHCParserDictionaryLinksKey: [
+                [kHCParserDictionaryUrlKey: "http://thegrounds.com.au/"]
+            ]
+        ]
+        let parserResults = parser!.dictionaryFromString(inputString)
+        XCTAssertTrue(NSDictionary(dictionary: parserResults).isEqualToDictionary(NSDictionary(dictionary: expectedDictWithoutPageTitle) as [NSObject : AnyObject]))
+        
+        let parsedMessage = HCMessage(dictionary: parserResults)
+        let expectation = expectationWithDescription("Parse \(inputString)")
+        
+        let expectedDictWithPageTitle = [
+            kHCParserDictionaryMentionsKey: ["jimmyk"],
+            kHCParserDictionaryEmoticonsKey: ["coffee"],
+            kHCParserDictionaryLinksKey: [
+                [
+                    kHCParserDictionaryUrlKey: "http://thegrounds.com.au/",
+                    kHCParserDictionaryTitleKey: "The Grounds of AlexandriaThe Grounds of Alexandria"
+                ]
+            ]
+        ]
+        
+        let tasks = parser!.fetchPageTitlesWithMessage(
+            parsedMessage,
+            completionBlock: { (completedMsg: HCMessage!, error: NSError?) in
+                XCTAssertTrue(NSDictionary(dictionary: completedMsg.dictionary).isEqualToDictionary(NSDictionary(dictionary: expectedDictWithPageTitle) as [NSObject : AnyObject]))
+                
+                expectation.fulfill()
+            }
+        )
+        
+        var maxTimeoutInterval = 5.0
+        for task in tasks {
+            maxTimeoutInterval += task.originalRequest!.timeoutInterval
+        }
+        
+        waitForExpectationsWithTimeout(maxTimeoutInterval) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+            for task in tasks {
+                task.cancel()
+            }
+        }
+    }
+    
+    func testAsyncDictinoaryWithCombinedStringOfMentionsAndEmoticonsAndMultipleLinks() {
+        let inputString = "Hey @jimmyk, I found the best (coffee) at http://thegrounds.com.au/"
+        let expectedDictWithoutPageTitle = [
+            kHCParserDictionaryMentionsKey: ["jimmyk"],
+            kHCParserDictionaryEmoticonsKey: ["coffee"],
+            kHCParserDictionaryLinksKey: [
+                [kHCParserDictionaryUrlKey: "http://thegrounds.com.au/"]
+            ]
+        ]
+        let parserResults = parser!.dictionaryFromString(inputString)
+        XCTAssertTrue(NSDictionary(dictionary: parserResults).isEqualToDictionary(NSDictionary(dictionary: expectedDictWithoutPageTitle) as [NSObject : AnyObject]))
+        
+        let parsedMessage = HCMessage(dictionary: parserResults)
+        let expectation = expectationWithDescription("Parse \(inputString)")
+        
+        let expectedDictWithPageTitle = [
+            kHCParserDictionaryMentionsKey: ["jimmyk"],
+            kHCParserDictionaryEmoticonsKey: ["coffee"],
+            kHCParserDictionaryLinksKey: [
+                [
+                    kHCParserDictionaryUrlKey: "http://thegrounds.com.au/",
+                    kHCParserDictionaryTitleKey: "The Grounds of AlexandriaThe Grounds of Alexandria"
+                ]
+            ]
+        ]
+        
+        let tasks = parser!.fetchPageTitlesWithMessage(
+            parsedMessage,
+            completionBlock: { (completedMsg: HCMessage!, error: NSError?) in
+                XCTAssertTrue(NSDictionary(dictionary: completedMsg.dictionary).isEqualToDictionary(NSDictionary(dictionary: expectedDictWithPageTitle) as [NSObject : AnyObject]))
+                
+                expectation.fulfill()
+            }
+        )
+        
+        var maxTimeoutInterval = 5.0
+        for task in tasks {
+            maxTimeoutInterval += task.originalRequest!.timeoutInterval
+        }
+        
+        waitForExpectationsWithTimeout(maxTimeoutInterval) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+            for task in tasks {
+                task.cancel()
+            }
+        }
+    }
 }
