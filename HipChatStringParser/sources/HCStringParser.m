@@ -141,9 +141,10 @@ NSString *kHCParserDictionaryTitleKey = @"title";
     if (links && links.count > 0) {
         NSMutableArray *linkDicts = [NSMutableArray array];
         for (NSString *url in links) {
-            NSDictionary *linkDict = @{
-                                       kHCParserDictionaryUrlKey: url
-                                       };
+            // Allow for post-modifications to the dictionary.
+            NSMutableDictionary *linkDict = [@{
+                                               kHCParserDictionaryUrlKey: url
+                                               } mutableCopy];
             [linkDicts addObject:linkDict];
         }
         results[kHCParserDictionaryLinksKey] = linkDicts;
