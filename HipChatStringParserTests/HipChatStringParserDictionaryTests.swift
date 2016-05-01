@@ -292,13 +292,12 @@ class HipChatStringParserDictionaryTests: XCTestCase {
         }
     }
     
-    func testAsyncDictinoaryWithCombinedStringOfMentionsAndEmoticonsAndMultipleLinks() {
-        let inputString = "Hey @jimmyk, I found the best (coffee) at http://thegrounds.com.au/"
+    func testAsyncDictinoaryWithCombinedStringOfMultipleLinks() {
+        let inputString = " http://thegrounds.com.au/ http://www.feliway.com/au/Feliway"
         let expectedDictWithoutPageTitle = [
-            kHCParserDictionaryMentionsKey: ["jimmyk"],
-            kHCParserDictionaryEmoticonsKey: ["coffee"],
             kHCParserDictionaryLinksKey: [
-                [kHCParserDictionaryUrlKey: "http://thegrounds.com.au/"]
+                [kHCParserDictionaryUrlKey: "http://thegrounds.com.au/"],
+                [kHCParserDictionaryUrlKey: "http://www.feliway.com/au/Feliway"]
             ]
         ]
         let parserResults = parser!.dictionaryFromString(inputString)
@@ -308,12 +307,14 @@ class HipChatStringParserDictionaryTests: XCTestCase {
         let expectation = expectationWithDescription("Parse \(inputString)")
         
         let expectedDictWithPageTitle = [
-            kHCParserDictionaryMentionsKey: ["jimmyk"],
-            kHCParserDictionaryEmoticonsKey: ["coffee"],
             kHCParserDictionaryLinksKey: [
                 [
                     kHCParserDictionaryUrlKey: "http://thegrounds.com.au/",
                     kHCParserDictionaryTitleKey: "The Grounds of AlexandriaThe Grounds of Alexandria"
+                ],
+                [
+                    kHCParserDictionaryUrlKey: "http://www.feliway.com/au/Feliway",
+                    kHCParserDictionaryTitleKey: "Feliway / Feliway"
                 ]
             ]
         ]
