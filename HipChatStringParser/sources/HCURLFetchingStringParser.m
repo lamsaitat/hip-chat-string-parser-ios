@@ -69,6 +69,19 @@
     return dataTask;
 }
 
+- (NSArray<NSURLSessionDataTask *> *__nonnull)fetchPageTitlesWithDictionary:(NSDictionary *)sourceDictionary completionBlock:(nullable void(^)(NSDictionary * __nonnull, NSError * __nullable))completionBlock {
+    
+    NSMutableArray *tasks = [NSMutableArray array];
+    NSMutableDictionary *dict = [sourceDictionary mutableCopy];
+    
+    // TODO: implement the logic to parse the string with parsers combined.
+    if (completionBlock) {
+        completionBlock(dict, nil);
+    }
+    
+    return tasks;
+}
+
 - (NSURLSessionDataTask * __nullable)dictionaryFromString:(NSString * __nullable)sourceString completionBlock:(nullable void(^)(NSDictionary * __nullable, NSError * __nullable))completionBlock {
     NSURLSessionDataTask *dataTask = nil;
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];

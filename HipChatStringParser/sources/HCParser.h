@@ -55,7 +55,20 @@ extern NSString *kHCParserDictionaryTitleKey;
 
 #pragma mark - HipChat combined parsers.
 
+/**
+ * Parses the input string and returns a dictionary containing mentions, emoticons,
+ * links if any was found.
+ * @Dicussion:  This method does not automatically fetch for a url's page title. In practical cases, say actually HipChat, you want to display the informations that you can immediately obtain values, whether or not you can actually get the page title from that url, can be handled separately without blocking the usage of the app.
+ */
 - (NSDictionary *)dictionaryFromString:(NSString *)sourceString;
+
+/**
+ * Look for urls in the dictionary and perform page title fetches on each of them,
+ * while all fetches are completed, whether successful or not, gives back a 
+ * dictionary via the completion block.
+ * @Discussion: The dictionary returned in the completion block is not guaranteed to be the same object as the source dictionary, i.e. sourceDictionary !== finalDictionary.  The worst case scenario where all fetching has failed you will still guarantee to have the (equivalent of) source dictionary returned.
+ */
+- (NSArray<NSURLSessionDataTask *> *__nonnull)fetchPageTitlesWithDictionary:(NSDictionary *)sourceDictionary completionBlock:(nullable void(^)(NSDictionary * __nonnull, NSError * __nullable))completionBlock;
 
 - (NSURLSessionDataTask * __nullable)dictionaryFromString:(NSString * __nullable)sourceString completionBlock:(nullable void(^)(NSDictionary * __nullable, NSError * __nullable))completionBlock;
 
