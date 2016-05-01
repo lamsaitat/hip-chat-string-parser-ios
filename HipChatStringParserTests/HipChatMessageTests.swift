@@ -184,4 +184,82 @@ class HipChatMessageTests: XCTestCase {
         
         XCTAssertTrue(NSDictionary(dictionary: message.dictionary).isEqualToDictionary(expectedDict))
     }
+    
+    func testMessageObjectToJsonStringWithValidDictionary1() {
+        let inputDict = [
+            kHCParserDictionaryMentionsKey: ["ben", "tony_stark"]
+        ]
+        let expectedDict = [
+            kHCParserDictionaryMentionsKey: ["ben", "tony_stark"]
+        ]
+        let message = HCMessage(dictionary: inputDict)
+        
+        XCTAssertTrue(NSDictionary(dictionary: message.dictionary).isEqualToDictionary(expectedDict))
+        
+        let resultingJsonString = message.jsonString
+        
+        // Because a dictionary's order is not guaranteed, therefore it is
+        // inacurate to test that strings are equal.  Instead, cast it back to a
+        // json object and compare will be much better.
+        do {
+            let recastedDict = try NSJSONSerialization.JSONObjectWithData(resultingJsonString.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments)
+            
+            XCTAssertTrue(NSDictionary(dictionary: recastedDict as! [NSObject : AnyObject]).isEqualToDictionary(inputDict))
+        } catch _ {
+            XCTFail("Test failed due to unable to cast string to json object")
+        }
+    }
+    
+    func testMessageObjectToJsonStringWithValidDictionary2() {
+        let inputDict = [
+            kHCParserDictionaryMentionsKey: ["ben", "tony_stark"],
+            kHCParserDictionaryEmoticonsKey: ["megusta", "coffee"]
+        ]
+        let expectedDict = [
+            kHCParserDictionaryMentionsKey: ["ben", "tony_stark"],
+            kHCParserDictionaryEmoticonsKey: ["megusta", "coffee"]
+        ]
+        let message = HCMessage(dictionary: inputDict)
+        
+        XCTAssertTrue(NSDictionary(dictionary: message.dictionary).isEqualToDictionary(expectedDict))
+        
+        let resultingJsonString = message.jsonString
+        
+        // Because a dictionary's order is not guaranteed, therefore it is
+        // inacurate to test that strings are equal.  Instead, cast it back to a
+        // json object and compare will be much better.
+        do {
+            let recastedDict = try NSJSONSerialization.JSONObjectWithData(resultingJsonString.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments)
+            
+            XCTAssertTrue(NSDictionary(dictionary: recastedDict as! [NSObject : AnyObject]).isEqualToDictionary(inputDict))
+        } catch _ {
+            XCTFail("Test failed due to unable to cast string to json object")
+        }
+    }
+    
+    func testMessageObjectToJsonStringWithInvalidDictionary1() {
+        let inputDict = [
+            kHCParserDictionaryUrlKey: ["ben", "tony_stark"],
+            kHCParserDictionaryMentionsKey: [
+                [kHCParserDictionaryUrlKey: "https://www.google.com"]
+            ]
+        ]
+        
+        let message = HCMessage(dictionary: inputDict)
+        
+        XCTAssertTrue(message.dictionary.isEmpty)
+        
+        let resultingJsonString = message.jsonString
+        
+        // Because a dictionary's order is not guaranteed, therefore it is
+        // inacurate to test that strings are equal.  Instead, cast it back to a
+        // json object and compare will be much better.
+        do {
+            let recastedDict: [String: AnyObject] = try NSJSONSerialization.JSONObjectWithData(resultingJsonString.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as! [String : AnyObject]
+            
+            XCTAssertTrue(recastedDict.isEmpty)
+        } catch _ {
+            XCTFail("Test failed due to unable to cast string to json object")
+        }
+    }
 }
