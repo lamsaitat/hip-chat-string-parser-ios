@@ -10,6 +10,7 @@
 #define BridgingHeader_h
 
 #import "HCConstants.h"
+#import "HCObject.h"
 #import "HCMessage.h"
 #import "HCLink.h"
 #import "HCParserFactory.h"
@@ -19,6 +20,7 @@
 #import "HCURLFetchingStringParser.h"
 
 // Libraries
-#import <GDataXML-HTML/GDataXMLNode.h>
+//#import <GDataXML-HTML/GDataXMLNode.h>
+#import "GDataXMLNode.h"
 
 #endif /* BridgingHeader_h */

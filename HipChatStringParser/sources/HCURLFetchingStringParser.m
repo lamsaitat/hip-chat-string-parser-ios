@@ -7,7 +7,7 @@
 //
 
 #import "HCURLFetchingStringParser.h"
-#import <GDataXML-HTML/GDataXMLNode.h>
+#import "GDataXMLNode.h"
 #import "HCMessage.h"
 #import "HCLink.h"
 

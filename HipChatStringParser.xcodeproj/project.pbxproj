@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		335CCAF64E70C0F359560338 /* libPods-HipChatStringParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3F6FBF048E8C14F66E54A3 /* libPods-HipChatStringParser.a */; };
-		B0B594FF0B6FDB454E3536F0 /* libPods-HipChatStringParserTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA99B3D476000D5D8E3B504 /* libPods-HipChatStringParserTests.a */; };
+		59EC4961CBE9A2730B1C6161 /* Pods_HipChatStringParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D040128B8A3A03188ACB5C3 /* Pods_HipChatStringParser.framework */; };
+		BC2064BDB4C066490C1FAAB1 /* Pods_HipChatStringParserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A875E3B635F3F13C18818D /* Pods_HipChatStringParserTests.framework */; };
 		CB0049781CD4A6A200594CEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049771CD4A6A200594CEE /* AppDelegate.swift */; };
 		CB00497A1CD4A6A200594CEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049791CD4A6A200594CEE /* ViewController.swift */; };
 		CB00497D1CD4A6A200594CEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB00497B1CD4A6A200594CEE /* Main.storyboard */; };
@@ -43,6 +43,7 @@
 		CB0049EC1CD6562000594CEE /* case4.json in Resources */ = {isa = PBXBuildFile; fileRef = CB0049E41CD6562000594CEE /* case4.json */; };
 		CB0049EE1CD6592500594CEE /* InputStringListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049ED1CD6592500594CEE /* InputStringListViewController.swift */; };
 		CB0049F01CD65D8A00594CEE /* CustomInputStringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049EF1CD65D8A00594CEE /* CustomInputStringCell.swift */; };
+		CB0049F21CD668A300594CEE /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049F11CD668A300594CEE /* MessageViewController.swift */; };
 		CBFFC6111CD515280029D560 /* HCURLFetchingStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFFC6101CD515280029D560 /* HCURLFetchingStringParser.m */; };
 		CBFFC6121CD515280029D560 /* HCURLFetchingStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFFC6101CD515280029D560 /* HCURLFetchingStringParser.m */; };
 		CBFFC6141CD51B090029D560 /* HipChatStringParserFetchingUrlLinksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFFC6131CD51B090029D560 /* HipChatStringParserFetchingUrlLinksTests.swift */; };
@@ -59,9 +60,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1EA99B3D476000D5D8E3B504 /* libPods-HipChatStringParserTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HipChatStringParserTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15A875E3B635F3F13C18818D /* Pods_HipChatStringParserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HipChatStringParserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D040128B8A3A03188ACB5C3 /* Pods_HipChatStringParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HipChatStringParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98CD5B2F6405C76C95E0F75A /* Pods-HipChatStringParserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HipChatStringParserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HipChatStringParserTests/Pods-HipChatStringParserTests.release.xcconfig"; sourceTree = "<group>"; };
-		BF3F6FBF048E8C14F66E54A3 /* libPods-HipChatStringParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HipChatStringParser.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB0049741CD4A6A200594CEE /* HipChatStringParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HipChatStringParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB0049771CD4A6A200594CEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB0049791CD4A6A200594CEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		CB0049E41CD6562000594CEE /* case4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = case4.json; sourceTree = "<group>"; };
 		CB0049ED1CD6592500594CEE /* InputStringListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputStringListViewController.swift; sourceTree = "<group>"; };
 		CB0049EF1CD65D8A00594CEE /* CustomInputStringCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputStringCell.swift; sourceTree = "<group>"; };
+		CB0049F11CD668A300594CEE /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		CBFFC60F1CD515280029D560 /* HCURLFetchingStringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCURLFetchingStringParser.h; sourceTree = "<group>"; };
 		CBFFC6101CD515280029D560 /* HCURLFetchingStringParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCURLFetchingStringParser.m; sourceTree = "<group>"; };
 		CBFFC6131CD51B090029D560 /* HipChatStringParserFetchingUrlLinksTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChatStringParserFetchingUrlLinksTests.swift; sourceTree = "<group>"; };
@@ -112,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				335CCAF64E70C0F359560338 /* libPods-HipChatStringParser.a in Frameworks */,
+				59EC4961CBE9A2730B1C6161 /* Pods_HipChatStringParser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0B594FF0B6FDB454E3536F0 /* libPods-HipChatStringParserTests.a in Frameworks */,
+				BC2064BDB4C066490C1FAAB1 /* Pods_HipChatStringParserTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,8 +132,8 @@
 		4BDAE5E8652C1231DD2C2DD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF3F6FBF048E8C14F66E54A3 /* libPods-HipChatStringParser.a */,
-				1EA99B3D476000D5D8E3B504 /* libPods-HipChatStringParserTests.a */,
+				5D040128B8A3A03188ACB5C3 /* Pods_HipChatStringParser.framework */,
+				15A875E3B635F3F13C18818D /* Pods_HipChatStringParserTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,6 +178,7 @@
 				CB0049791CD4A6A200594CEE /* ViewController.swift */,
 				CB0049EF1CD65D8A00594CEE /* CustomInputStringCell.swift */,
 				CB0049ED1CD6592500594CEE /* InputStringListViewController.swift */,
+				CB0049F11CD668A300594CEE /* MessageViewController.swift */,
 				CB00497B1CD4A6A200594CEE /* Main.storyboard */,
 				CB00497E1CD4A6A200594CEE /* Assets.xcassets */,
 				CB0049801CD4A6A200594CEE /* LaunchScreen.storyboard */,
@@ -470,6 +473,7 @@
 				CB0049CE1CD603D000594CEE /* HCConstants.m in Sources */,
 				CB0049F01CD65D8A00594CEE /* CustomInputStringCell.swift in Sources */,
 				CB0049D31CD623AA00594CEE /* HCMessage.m in Sources */,
+				CB0049F21CD668A300594CEE /* MessageViewController.swift in Sources */,
 				CB0049781CD4A6A200594CEE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -615,6 +619,7 @@
 			baseConfigurationReference = E34873B9CD4EBE3908696EA8 /* Pods-HipChatStringParser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = HipChatStringParser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lamsaitat..HipChatStringParser;
@@ -628,6 +633,7 @@
 			baseConfigurationReference = D9B508DD307E02F0CA1399D2 /* Pods-HipChatStringParser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = HipChatStringParser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lamsaitat..HipChatStringParser;
