@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import Reachability
 
 class MessageViewController: UIViewController {
     
@@ -19,6 +20,8 @@ class MessageViewController: UIViewController {
         let _parser = HCParserFactory.urlFetchingParser()
         return _parser
     }()
+    
+    let reachability: Reachability = Reachability.reachabilityForInternetConnection()
     
     var message: HCMessage?
     
@@ -40,25 +43,33 @@ class MessageViewController: UIViewController {
     
     private func fetchPageTitleIfRequired() {
         if message?.links.count > 0 {
-            let hud = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().windows.first, animated: true)
-            hud.labelText = "Loading..."
-            parser.fetchPageTitlesWithMessage!(
-                message,
-                completionBlock: { (returningMessage: HCMessage!, error: NSError?) in
-                    
-                    if error == nil {
-                        self.message = returningMessage
+            
+            if reachability.isReachableViaWiFi() || reachability.isReachableViaWiFi() {
+            
+                let hud = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().windows.first, animated: true)
+                hud.labelText = "Loading..."
+                parser.fetchPageTitlesWithMessage!(
+                    message,
+                    completionBlock: { (returningMessage: HCMessage!, error: NSError?) in
+                        
+                        if error == nil {
+                            self.message = returningMessage
+                            
+                            dispatch_async(dispatch_get_main_queue(), {
+                                self.updateContentText()
+                            })
+                        }
                         
                         dispatch_async(dispatch_get_main_queue(), {
-                            self.updateContentText()
+                            hud.hide(true)
                         })
                     }
-                    
-                    dispatch_async(dispatch_get_main_queue(), {
-                        hud.hide(true)
-                    })
-                }
-            )
+                )
+            } else {
+                let alert = UIAlertController(title: "No internet connection", message: "Cannot fetch page title when there is no internet.", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: nil))
+                presentViewController(alert, animated: true, completion: nil)
+            }
         }
     }
 
