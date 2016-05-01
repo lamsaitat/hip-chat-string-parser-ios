@@ -10,6 +10,8 @@
 #define BridgingHeader_h
 
 #import "HCConstants.h"
+#import "HCMessage.h"
+#import "HCLink.h"
 #import "HCParserFactory.h"
 #import "HCParser.h"
 #import "HCStringParser.h"
