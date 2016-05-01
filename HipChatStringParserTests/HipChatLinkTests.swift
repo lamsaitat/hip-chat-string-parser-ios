@@ -62,5 +62,85 @@ class HipChatLinkTests: XCTestCase {
         XCTAssertNotNil(link.title)
         XCTAssertTrue(link.url == inputDict[kHCParserDictionaryUrlKey]!)
     }
+    
+    
+    // MARK: - Test dictionary getter.
+    
+    func testLinkObjectToNilDictionary() {
+        let link = HCLink(dictionary: nil)
+        let outputDict: [NSObject: AnyObject]? = link.dictionary
+        
+        XCTAssertNotNil(outputDict)
+        XCTAssertTrue(outputDict!.isEmpty == true)
+    }
+    
+    func testLinkObjectToEmptyDictionary() {
+        let inputDict = [String: AnyObject]()
+        let link = HCLink(dictionary: inputDict)
+        let outputDict: [NSObject: AnyObject]? = link.dictionary
+        
+        XCTAssertNotNil(outputDict)
+        XCTAssertTrue(outputDict!.isEmpty == true)
+    }
+    
+    func testLinkObjectToDictionary1() {
+        let inputDict = [
+            kHCParserDictionaryUrlKey: "https://www.google.com",
+            kHCParserDictionaryTitleKey: "Google"
+        ]
+        
+        let link = HCLink(dictionary: inputDict)
+        
+        XCTAssertTrue(NSDictionary(dictionary: link.dictionary).isEqualToDictionary(inputDict))
+    }
+    
+    func testLinkObjectToDictionary2() {
+        let inputDict = [
+            kHCParserDictionaryUrlKey: NSURL(string: "https://www.google.com")!,
+            kHCParserDictionaryTitleKey: "Google"
+        ]
+        
+        let expectedDict = [
+            kHCParserDictionaryUrlKey: "https://www.google.com",
+            kHCParserDictionaryTitleKey: "Google"
+        ]
+        
+        let link = HCLink(dictionary: inputDict)
+        
+        XCTAssertTrue(NSDictionary(dictionary: link.dictionary).isEqualToDictionary(expectedDict))
+    }
+    
+    func LinkObjectToDictionaryWithInvalidValues1() {
+        let inputDict = [
+            kHCParserDictionaryUrlKey: [NSURL(string: "https://www.google.com")!],
+            kHCParserDictionaryTitleKey: "Google"
+        ]
+        let expectedDict = [
+            kHCParserDictionaryTitleKey: "Google"
+        ]
+        let link = HCLink(dictionary: inputDict)
+        let outputDict: [NSObject: AnyObject] = link.dictionary
+        
+        XCTAssertNil(outputDict[kHCParserDictionaryUrlKey])
+        XCTAssertNotNil(outputDict[kHCParserDictionaryTitleKey])
+        XCTAssertTrue(outputDict[kHCParserDictionaryTitleKey] as? String == "Google")
+        XCTAssertTrue(NSDictionary(dictionary: link.dictionary).isEqualToDictionary(expectedDict))
+    }
 
+    func LinkObjectToDictionaryWithInvalidValues2() {
+        let inputDict = [
+            kHCParserDictionaryUrlKey: NSURL(string: "https://www.google.com")!,
+            kHCParserDictionaryTitleKey: ["Google"]
+        ]
+        let expectedDict = [
+            kHCParserDictionaryUrlKey: "https://www.google.com"
+        ]
+        let link = HCLink(dictionary: inputDict)
+        let outputDict: [NSObject: AnyObject] = link.dictionary
+        
+        XCTAssertNotNil(outputDict[kHCParserDictionaryUrlKey])
+        XCTAssertNil(outputDict[kHCParserDictionaryTitleKey])
+        XCTAssertTrue(outputDict[kHCParserDictionaryUrlKey] as? String == "https://www.google.com")
+        XCTAssertTrue(NSDictionary(dictionary: link.dictionary).isEqualToDictionary(expectedDict))
+    }
 }
