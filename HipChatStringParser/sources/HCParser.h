@@ -40,7 +40,7 @@
 
 @optional
 
-- (NSURLSessionDataTask *)pageTitleForURL:(NSURL *)url completionBlock:(nullable void(^)(NSString * __nullable, NSError * __nullable))completionBlock;
+- (NSURLSessionDataTask *)pageTitleForURL:(NSURL * __nonnull)url completionBlock:(nullable void(^)(NSString * __nullable, NSError * __nullable))completionBlock;
 
 @end
 
