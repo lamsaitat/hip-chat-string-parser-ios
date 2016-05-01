@@ -66,7 +66,7 @@ class MessageViewController: UIViewController {
         }
         
         let jsonString = message!.jsonString
-        // FIXME:  We should trim out all the nasty double backslashed escape characters.
+        
         if jsonString.isEmpty == false {
             displayString += "JSON output:\n\(jsonString)\n"
         }
