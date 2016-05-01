@@ -20,7 +20,7 @@
 #import "HCURLFetchingStringParser.h"
 
 // Libraries
-//#import <GDataXML-HTML/GDataXMLNode.h>
 #import "GDataXMLNode.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 #endif /* BridgingHeader_h */
