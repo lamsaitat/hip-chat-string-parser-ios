@@ -342,4 +342,203 @@ class HipChatStringParserDictionaryTests: XCTestCase {
             }
         }
     }
+    
+    
+    // MARK: Atlassian test cases
+    
+    func testAsyncDictionaryWithAtlassianTestCase1() {
+        let inputString = "@chris you around?"
+        let testFilePath = NSBundle(forClass: self.dynamicType).pathForResource("case1", ofType: "json")
+        var testDict: [String: AnyObject]?
+        if testFilePath != nil {
+            do {
+                let expectedJsonString = try String(contentsOfFile: testFilePath!, encoding: NSUTF8StringEncoding)
+                testDict = try NSJSONSerialization.JSONObjectWithData(expectedJsonString.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [String : AnyObject]
+            } catch _ {
+                XCTFail("Test failed due to failing to read the expected output file into string object")
+            }
+        } else {
+            XCTFail("Test failed due to failing to locate the expected output file")
+        }
+        
+        if testDict == nil {
+            XCTFail("Test failed due to failing to obtain a valid expected result")
+        }
+        let expectedDict = testDict!
+        
+        
+        let parserResults = parser!.dictionaryFromString(inputString)
+        let parsedMessage = HCMessage(dictionary: parserResults)
+        let expectation = expectationWithDescription("Parse \(inputString)")
+        
+        let tasks = parser!.fetchPageTitlesWithMessage(
+            parsedMessage,
+            completionBlock: { (completedMsg: HCMessage!, error: NSError?) in
+                XCTAssertTrue(NSDictionary(dictionary: completedMsg.dictionary).isEqualToDictionary(expectedDict))
+                
+                expectation.fulfill()
+            }
+        )
+        
+        var maxTimeoutInterval = 5.0
+        for task in tasks {
+            maxTimeoutInterval += task.originalRequest!.timeoutInterval
+        }
+        
+        waitForExpectationsWithTimeout(maxTimeoutInterval) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+            for task in tasks {
+                task.cancel()
+            }
+        }
+    }
+    
+    func testAsyncDictionaryWithAtlassianTestCase2() {
+        let inputString = "Good morning! (megusta) (coffee)"
+        let testFilePath = NSBundle(forClass: self.dynamicType).pathForResource("case2", ofType: "json")
+        var testDict: [String: AnyObject]?
+        if testFilePath != nil {
+            do {
+                let expectedJsonString = try String(contentsOfFile: testFilePath!, encoding: NSUTF8StringEncoding)
+                testDict = try NSJSONSerialization.JSONObjectWithData(expectedJsonString.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [String : AnyObject]
+            } catch _ {
+                XCTFail("Test failed due to failing to read the expected output file into string object")
+            }
+        } else {
+            XCTFail("Test failed due to failing to locate the expected output file")
+        }
+        
+        if testDict == nil {
+            XCTFail("Test failed due to failing to obtain a valid expected result")
+        }
+        let expectedDict = testDict!
+        
+        
+        let parserResults = parser!.dictionaryFromString(inputString)
+        let parsedMessage = HCMessage(dictionary: parserResults)
+        let expectation = expectationWithDescription("Parse \(inputString)")
+        
+        let tasks = parser!.fetchPageTitlesWithMessage(
+            parsedMessage,
+            completionBlock: { (completedMsg: HCMessage!, error: NSError?) in
+                XCTAssertTrue(NSDictionary(dictionary: completedMsg.dictionary).isEqualToDictionary(expectedDict))
+                
+                expectation.fulfill()
+            }
+        )
+        
+        var maxTimeoutInterval = 5.0
+        for task in tasks {
+            maxTimeoutInterval += task.originalRequest!.timeoutInterval
+        }
+        
+        waitForExpectationsWithTimeout(maxTimeoutInterval) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+            for task in tasks {
+                task.cancel()
+            }
+        }
+    }
+    
+    func testAsyncDictionaryWithAtlassianTestCase3() {
+        let inputString = "Olympics are starting soon;http://www.nbcolympics.com"
+        let testFilePath = NSBundle(forClass: self.dynamicType).pathForResource("case3", ofType: "json")
+        var testDict: [String: AnyObject]?
+        if testFilePath != nil {
+            do {
+                let expectedJsonString = try String(contentsOfFile: testFilePath!, encoding: NSUTF8StringEncoding)
+                testDict = try NSJSONSerialization.JSONObjectWithData(expectedJsonString.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [String : AnyObject]
+            } catch _ {
+                XCTFail("Test failed due to failing to read the expected output file into string object")
+            }
+        } else {
+            XCTFail("Test failed due to failing to locate the expected output file")
+        }
+        
+        if testDict == nil {
+            XCTFail("Test failed due to failing to obtain a valid expected result")
+        }
+        let expectedDict = testDict!
+        
+        
+        let parserResults = parser!.dictionaryFromString(inputString)
+        let parsedMessage = HCMessage(dictionary: parserResults)
+        let expectation = expectationWithDescription("Parse \(inputString)")
+        
+        let tasks = parser!.fetchPageTitlesWithMessage(
+            parsedMessage,
+            completionBlock: { (completedMsg: HCMessage!, error: NSError?) in
+                XCTAssertTrue(NSDictionary(dictionary: completedMsg.dictionary).isEqualToDictionary(expectedDict))
+                
+                expectation.fulfill()
+            }
+        )
+        
+        var maxTimeoutInterval = 5.0
+        for task in tasks {
+            maxTimeoutInterval += task.originalRequest!.timeoutInterval
+        }
+        
+        waitForExpectationsWithTimeout(maxTimeoutInterval) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+            for task in tasks {
+                task.cancel()
+            }
+        }
+    }
+    
+    func testAsyncDictionaryWithAtlassianTestCase4() {
+        let inputString = "@bob @john (success) such a cool feature; https://twitter.com/jdorfman/status/430511497475670016"
+        let testFilePath = NSBundle(forClass: self.dynamicType).pathForResource("case4", ofType: "json")
+        var testDict: [String: AnyObject]?
+        if testFilePath != nil {
+            do {
+                let expectedJsonString = try String(contentsOfFile: testFilePath!, encoding: NSUTF8StringEncoding)
+                testDict = try NSJSONSerialization.JSONObjectWithData(expectedJsonString.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments) as? [String : AnyObject]
+            } catch _ {
+                XCTFail("Test failed due to failing to read the expected output file into string object")
+            }
+        } else {
+            XCTFail("Test failed due to failing to locate the expected output file")
+        }
+        
+        if testDict == nil {
+            XCTFail("Test failed due to failing to obtain a valid expected result")
+        }
+        let expectedDict = testDict!
+        
+        
+        let parserResults = parser!.dictionaryFromString(inputString)
+        let parsedMessage = HCMessage(dictionary: parserResults)
+        let expectation = expectationWithDescription("Parse \(inputString)")
+        
+        let tasks = parser!.fetchPageTitlesWithMessage(
+            parsedMessage,
+            completionBlock: { (completedMsg: HCMessage!, error: NSError?) in
+                XCTAssertTrue(NSDictionary(dictionary: completedMsg.dictionary).isEqualToDictionary(expectedDict))
+                
+                expectation.fulfill()
+            }
+        )
+        
+        var maxTimeoutInterval = 5.0
+        for task in tasks {
+            maxTimeoutInterval += task.originalRequest!.timeoutInterval
+        }
+        
+        waitForExpectationsWithTimeout(maxTimeoutInterval) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+            for task in tasks {
+                task.cancel()
+            }
+        }
+    }
 }
