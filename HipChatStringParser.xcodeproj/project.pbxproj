@@ -24,6 +24,7 @@
 		CB0049C51CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049C41CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift */; };
 		CB0049C71CD504FC00594CEE /* emoticons-list-newlined.txt in Resources */ = {isa = PBXBuildFile; fileRef = CB0049C61CD504FC00594CEE /* emoticons-list-newlined.txt */; };
 		CB0049C91CD50D5A00594CEE /* HipChatStringParserUrlLinksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049C81CD50D5A00594CEE /* HipChatStringParserUrlLinksTests.swift */; };
+		CB0049CB1CD5DC8800594CEE /* HipChatStringParserDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049CA1CD5DC8800594CEE /* HipChatStringParserDictionaryTests.swift */; };
 		CBFFC6111CD515280029D560 /* HCURLFetchingStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFFC6101CD515280029D560 /* HCURLFetchingStringParser.m */; };
 		CBFFC6121CD515280029D560 /* HCURLFetchingStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFFC6101CD515280029D560 /* HCURLFetchingStringParser.m */; };
 		CBFFC6141CD51B090029D560 /* HipChatStringParserFetchingUrlLinksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFFC6131CD51B090029D560 /* HipChatStringParserFetchingUrlLinksTests.swift */; };
@@ -64,6 +65,7 @@
 		CB0049C41CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChatStringParserEmoticonsTests.swift; sourceTree = "<group>"; };
 		CB0049C61CD504FC00594CEE /* emoticons-list-newlined.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "emoticons-list-newlined.txt"; sourceTree = "<group>"; };
 		CB0049C81CD50D5A00594CEE /* HipChatStringParserUrlLinksTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChatStringParserUrlLinksTests.swift; sourceTree = "<group>"; };
+		CB0049CA1CD5DC8800594CEE /* HipChatStringParserDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChatStringParserDictionaryTests.swift; sourceTree = "<group>"; };
 		CBFFC60F1CD515280029D560 /* HCURLFetchingStringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCURLFetchingStringParser.h; sourceTree = "<group>"; };
 		CBFFC6101CD515280029D560 /* HCURLFetchingStringParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCURLFetchingStringParser.m; sourceTree = "<group>"; };
 		CBFFC6131CD51B090029D560 /* HipChatStringParserFetchingUrlLinksTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChatStringParserFetchingUrlLinksTests.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				CB0049C41CD4FDCB00594CEE /* HipChatStringParserEmoticonsTests.swift */,
 				CB0049C81CD50D5A00594CEE /* HipChatStringParserUrlLinksTests.swift */,
 				CBFFC6131CD51B090029D560 /* HipChatStringParserFetchingUrlLinksTests.swift */,
+				CB0049CA1CD5DC8800594CEE /* HipChatStringParserDictionaryTests.swift */,
 				CB00498E1CD4A6A200594CEE /* Info.plist */,
 			);
 			path = HipChatStringParserTests;
@@ -399,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBFFC6121CD515280029D560 /* HCURLFetchingStringParser.m in Sources */,
+				CB0049CB1CD5DC8800594CEE /* HipChatStringParserDictionaryTests.swift in Sources */,
 				CB0049A21CD4A91D00594CEE /* HCStubStringParser.m in Sources */,
 				CB0049AF1CD4C15900594CEE /* HCParserFactory.m in Sources */,
 				CB0049B31CD4C49000594CEE /* HCStringParser.m in Sources */,
