@@ -8,6 +8,8 @@
 
 #import "HCURLFetchingStringParser.h"
 #import <GDataXML-HTML/GDataXMLNode.h>
+#import "HCMessage.h"
+#import "HCLink.h"
 
 @implementation HCURLFetchingStringParser
 
@@ -67,6 +69,17 @@
     [dataTask resume];
     
     return dataTask;
+}
+
+- (NSArray<NSURLSessionDataTask *> *__nonnull)fetchPageTitlesWithMessage:(HCMessage *)sourceMessage completionBlock:(nullable void(^)(HCMessage * __non_null, NSError * __nullable))completionBlock {
+    NSMutableArray *tasks = [NSMutableArray array];
+    
+    // TODO: implement the logic to parse the string with parsers combined.
+    if (completionBlock) {
+        completionBlock(sourceMessage, nil);
+    }
+    
+    return tasks;
 }
 
 - (NSArray<NSURLSessionDataTask *> *__nonnull)fetchPageTitlesWithDictionary:(NSDictionary *)sourceDictionary completionBlock:(nullable void(^)(NSDictionary * __nonnull, NSError * __nullable))completionBlock {

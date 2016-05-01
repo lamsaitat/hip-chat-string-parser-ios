@@ -13,7 +13,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wnullability-completeness"
 
-
+@class HCMessage;
 
 @protocol HCParser <NSObject>
 
@@ -59,10 +59,13 @@
 - (NSDictionary *)dictionaryFromString:(NSString *)sourceString;
 
 /**
- * Look for urls in the dictionary and perform page title fetches on each of them,
- * while all fetches are completed, whether successful or not, gives back a 
- * dictionary via the completion block.
- * @Discussion: The dictionary returned in the completion block is not guaranteed to be the same object as the source dictionary, i.e. sourceDictionary !== finalDictionary.  The worst case scenario where all fetching has failed you will still guarantee to have the (equivalent of) source dictionary returned.
+ * Look for urls in the message object and fetch each of the urls' page title.  When all data tasks are finished (non active), calls the completion block with a message object filled with all title.
+ * @Discussion: the message object returned in the completionBlock is not guaranteed to be the same object as the sourceObject.
+ */
+- (NSArray<NSURLSessionDataTask *> *__nonnull)fetchPageTitlesWithMessage:(HCMessage *)sourceMessage completionBlock:(nullable void(^)(HCMessage * __non_null, NSError * __nullable))completionBlock;
+
+/**
+ * Basically the same logic, except you pass in a source dictionary, the underlying code will instantiate a HCMessage object and instead of a HCMessage object returned in the completionBlock, it's dictionary property will be returned, which you can choose to convert it back into a HCMessage again.
  */
 - (NSArray<NSURLSessionDataTask *> *__nonnull)fetchPageTitlesWithDictionary:(NSDictionary *)sourceDictionary completionBlock:(nullable void(^)(NSDictionary * __nonnull, NSError * __nullable))completionBlock;
 
