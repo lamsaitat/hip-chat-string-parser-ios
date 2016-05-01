@@ -9,6 +9,7 @@
 #ifndef BridgingHeader_h
 #define BridgingHeader_h
 
+#import "HCConstants.h"
 #import "HCParserFactory.h"
 #import "HCParser.h"
 #import "HCStringParser.h"

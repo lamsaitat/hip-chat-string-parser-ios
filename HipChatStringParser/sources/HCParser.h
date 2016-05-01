@@ -13,11 +13,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wnullability-completeness"
 
-extern NSString *kHCParserDictionaryMentionsKey;
-extern NSString *kHCParserDictionaryEmoticonsKey;
-extern NSString *kHCParserDictionaryLinksKey;
-extern NSString *kHCParserDictionaryUrlKey;
-extern NSString *kHCParserDictionaryTitleKey;
+
 
 @protocol HCParser <NSObject>
 

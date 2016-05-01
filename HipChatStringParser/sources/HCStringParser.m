@@ -7,12 +7,7 @@
 //
 
 #import "HCStringParser.h"
-
-NSString *kHCParserDictionaryMentionsKey = @"mentions";
-NSString *kHCParserDictionaryEmoticonsKey = @"emoticons";
-NSString *kHCParserDictionaryLinksKey = @"links";
-NSString *kHCParserDictionaryUrlKey = @"url";
-NSString *kHCParserDictionaryTitleKey = @"title";
+#import "HCConstants.h"
 
 @implementation HCStringParser
 
