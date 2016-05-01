@@ -41,6 +41,7 @@
 		CB0049EA1CD6562000594CEE /* case3.json in Resources */ = {isa = PBXBuildFile; fileRef = CB0049E31CD6562000594CEE /* case3.json */; };
 		CB0049EB1CD6562000594CEE /* case4.json in Resources */ = {isa = PBXBuildFile; fileRef = CB0049E41CD6562000594CEE /* case4.json */; };
 		CB0049EC1CD6562000594CEE /* case4.json in Resources */ = {isa = PBXBuildFile; fileRef = CB0049E41CD6562000594CEE /* case4.json */; };
+		CB0049EE1CD6592500594CEE /* InputStringListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049ED1CD6592500594CEE /* InputStringListViewController.swift */; };
 		CBFFC6111CD515280029D560 /* HCURLFetchingStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFFC6101CD515280029D560 /* HCURLFetchingStringParser.m */; };
 		CBFFC6121CD515280029D560 /* HCURLFetchingStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFFC6101CD515280029D560 /* HCURLFetchingStringParser.m */; };
 		CBFFC6141CD51B090029D560 /* HipChatStringParserFetchingUrlLinksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFFC6131CD51B090029D560 /* HipChatStringParserFetchingUrlLinksTests.swift */; };
@@ -95,6 +96,7 @@
 		CB0049E21CD6562000594CEE /* case2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = case2.json; sourceTree = "<group>"; };
 		CB0049E31CD6562000594CEE /* case3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = case3.json; sourceTree = "<group>"; };
 		CB0049E41CD6562000594CEE /* case4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = case4.json; sourceTree = "<group>"; };
+		CB0049ED1CD6592500594CEE /* InputStringListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputStringListViewController.swift; sourceTree = "<group>"; };
 		CBFFC60F1CD515280029D560 /* HCURLFetchingStringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCURLFetchingStringParser.h; sourceTree = "<group>"; };
 		CBFFC6101CD515280029D560 /* HCURLFetchingStringParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCURLFetchingStringParser.m; sourceTree = "<group>"; };
 		CBFFC6131CD51B090029D560 /* HipChatStringParserFetchingUrlLinksTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChatStringParserFetchingUrlLinksTests.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				CB0049971CD4A6C700594CEE /* headers */,
 				CB0049771CD4A6A200594CEE /* AppDelegate.swift */,
 				CB0049791CD4A6A200594CEE /* ViewController.swift */,
+				CB0049ED1CD6592500594CEE /* InputStringListViewController.swift */,
 				CB00497B1CD4A6A200594CEE /* Main.storyboard */,
 				CB00497E1CD4A6A200594CEE /* Assets.xcassets */,
 				CB0049801CD4A6A200594CEE /* LaunchScreen.storyboard */,
@@ -458,6 +461,7 @@
 				CB0049B21CD4C49000594CEE /* HCStringParser.m in Sources */,
 				CBFFC6111CD515280029D560 /* HCURLFetchingStringParser.m in Sources */,
 				CB0049A11CD4A91D00594CEE /* HCStubStringParser.m in Sources */,
+				CB0049EE1CD6592500594CEE /* InputStringListViewController.swift in Sources */,
 				CB00497A1CD4A6A200594CEE /* ViewController.swift in Sources */,
 				CB0049D71CD623B900594CEE /* HCLink.m in Sources */,
 				CB0049CE1CD603D000594CEE /* HCConstants.m in Sources */,
