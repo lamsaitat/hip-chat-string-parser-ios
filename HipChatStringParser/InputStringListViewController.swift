@@ -119,6 +119,12 @@ class InputStringListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if let customInputCell = cell as? CustomInputStringCell where indexPath.section == InputStringListSection.Custom.rawValue {
+            customInputCell.inputTextField.resignFirstResponder()
+        }
+    }
 
         /*
     // MARK: - Navigation
