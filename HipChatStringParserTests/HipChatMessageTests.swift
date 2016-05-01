@@ -120,4 +120,68 @@ class HipChatMessageTests: XCTestCase {
         XCTAssertTrue(msg.emoticons.count == 0)
         XCTAssertTrue(msg.links.count == 0)
     }
+    
+    
+    // MARK: - dictionary getters
+    
+    func testMessageObjectToNilDictionary() {
+        let message = HCMessage(dictionary: nil)
+        let outputDict: [NSObject: AnyObject]? = message.dictionary
+        
+        XCTAssertNotNil(outputDict)
+        XCTAssertTrue(outputDict!.isEmpty == true)
+    }
+    
+    func testMessageObjectToEmptyDictionary() {
+        let inputDict = [String: AnyObject]()
+        let message = HCMessage(dictionary: inputDict)
+        let outputDict: [NSObject: AnyObject]? = message.dictionary
+        
+        XCTAssertNotNil(outputDict)
+        XCTAssertTrue(outputDict!.isEmpty == true)
+    }
+    
+    func testMessageObjectToValidDictionary1() {
+        let inputDict = [
+            kHCParserDictionaryMentionsKey: ["ben", "tony_stark"]
+        ]
+        let expectedDict = [
+            kHCParserDictionaryMentionsKey: ["ben", "tony_stark"]
+        ]
+        let message = HCMessage(dictionary: inputDict)
+        
+        XCTAssertTrue(NSDictionary(dictionary: message.dictionary).isEqualToDictionary(expectedDict))
+    }
+    
+    func testMessageObjectToValidDictionary2() {
+        let inputDict = [
+            kHCParserDictionaryMentionsKey: ["ben", "tony_stark"],
+            kHCParserDictionaryEmoticonsKey: ["megusta", "coffee"]
+        ]
+        let expectedDict = [
+            kHCParserDictionaryMentionsKey: ["ben", "tony_stark"],
+            kHCParserDictionaryEmoticonsKey: ["megusta", "coffee"]
+        ]
+        let message = HCMessage(dictionary: inputDict)
+        
+        XCTAssertTrue(NSDictionary(dictionary: message.dictionary).isEqualToDictionary(expectedDict))
+    }
+    
+    func testMessageObjectToValidDictionary3() {
+        let inputDict = [
+            kHCParserDictionaryMentionsKey: ["ben", "tony_stark"],
+            kHCParserDictionaryLinksKey: [
+                [kHCParserDictionaryUrlKey: "https://www.google.com"]
+            ]
+        ]
+        let expectedDict = [
+            kHCParserDictionaryMentionsKey: ["ben", "tony_stark"],
+            kHCParserDictionaryLinksKey: [
+                [kHCParserDictionaryUrlKey: "https://www.google.com"]
+            ]
+        ]
+        let message = HCMessage(dictionary: inputDict)
+        
+        XCTAssertTrue(NSDictionary(dictionary: message.dictionary).isEqualToDictionary(expectedDict))
+    }
 }
