@@ -45,7 +45,13 @@
 }
 
 - (NSString *)jsonString {
-    return nil;
+    NSError *jsonError = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.dictionary options:NSJSONWritingPrettyPrinted error:&jsonError];
+    if (jsonError) {
+        NSLog(@"Failed to create json data: %@", jsonError.localizedDescription);
+        return nil;
+    }
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 }
 
 @end
