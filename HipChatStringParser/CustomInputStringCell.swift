@@ -10,7 +10,7 @@ import UIKit
 
 typealias CustomInputStringCellParseActionBlock = (String?)->()
 
-class CustomInputStringCell: UITableViewCell {
+class CustomInputStringCell: UITableViewCell, UITextFieldDelegate {
     
     static let identifier = "CustomInputStringCell"
     
@@ -20,8 +20,17 @@ class CustomInputStringCell: UITableViewCell {
     var parseActionBlock: CustomInputStringCellParseActionBlock?
     
     @IBAction func parseButtonTouchUpInside(sender: AnyObject) {
+        inputTextField.resignFirstResponder()
         if parseActionBlock != nil {
             parseActionBlock!(inputTextField.text)
         }
+    }
+    
+    
+    // MARK: - UITextFieldDelegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
 }
