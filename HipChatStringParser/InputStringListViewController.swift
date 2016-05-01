@@ -13,6 +13,8 @@ enum InputStringListSection: Int {
     case Custom = 1
 }
 
+let InputStringListToMessageSegue = "InputStringListToMessageSegue"
+
 class InputStringListViewController: UITableViewController {
     
     static let identifier = "InputStringListViewController"
