@@ -15,9 +15,13 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)sourceDictionary;
 
-/** Converts conforming class's properties into a dictionary;
+/** Converts conforming class's properties into a dictionary
  */
-@property(readonly, copy) NSDictionary *dictionary;
+@property (readonly, copy) NSDictionary *dictionary;
+
+/** Converts conforming class's properties into a json string
+ */
+@property (readonly, copy) NSString *jsonString;
 
 @end
 

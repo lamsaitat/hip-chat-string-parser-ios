@@ -44,4 +44,8 @@
     return [NSDictionary dictionaryWithDictionary:dict];  // Lock the dictionary to be immutable.
 }
 
+- (NSString *)jsonString {
+    return nil;
+}
+
 @end
