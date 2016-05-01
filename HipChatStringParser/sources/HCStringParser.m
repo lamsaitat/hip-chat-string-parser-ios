@@ -117,4 +117,10 @@
     return [NSOrderedSet orderedSetWithArray:[self urlLinksFromString:sourceString]];
 }
 
+- (NSDictionary *)dictionaryFromString:(NSString *)sourceString {
+    
+    // TODO: Implement the logic to combine the parser together.
+    return [NSDictionary dictionary];
+}
+
 @end

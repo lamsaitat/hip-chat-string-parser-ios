@@ -11,6 +11,10 @@
 
 @protocol HCParser <NSObject>
 
+// Don't need to warn us about other methods not giving nullability...
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnullability-completeness"
+
 /**
  * Detects all user mention of @XXXX pattern from a given string.
  */
@@ -45,7 +49,11 @@
 
 #pragma mark - HipChat combined parsers.
 
+- (NSDictionary *)dictionaryFromString:(NSString *)sourceString;
+
 - (NSURLSessionDataTask * __nullable)dictionaryFromString:(NSString * __nullable)sourceString completionBlock:(nullable void(^)(NSDictionary * __nullable, NSError * __nullable))completionBlock;
+
+#pragma clang diagnostic pop
 
 @end
 
