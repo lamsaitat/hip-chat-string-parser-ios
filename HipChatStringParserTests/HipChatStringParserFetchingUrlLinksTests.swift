@@ -29,7 +29,7 @@ class HipChatStringParserFetchingUrlLinksTests: XCTestCase {
         let expectation = expectationWithDescription("GET \(url)")
         
         let task = parser!.pageTitleForURL(
-            url,
+            url!,
             completionBlock: { (pageTitle: String?, error: NSError?) in
                 
                 XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! == expectedResult)
@@ -37,12 +37,12 @@ class HipChatStringParserFetchingUrlLinksTests: XCTestCase {
             }
         )
         
-        waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval) { error in
+        waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval, handler: { (error: NSError?) in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
             }
             task.cancel()
-        }
+        })
     }
     
     func testPageTitleFetchingWithLongerPageTitle() {
@@ -52,7 +52,7 @@ class HipChatStringParserFetchingUrlLinksTests: XCTestCase {
         let expectation = expectationWithDescription("GET \(url)")
         
         let task = parser!.pageTitleForURL(
-            url,
+            url!,
             completionBlock: { (pageTitle: String?, error: NSError?) in
                 
                 XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! == expectedResult)
@@ -79,7 +79,7 @@ class HipChatStringParserFetchingUrlLinksTests: XCTestCase {
         let expectation = expectationWithDescription("GET \(url)")
         
         let task = parser!.pageTitleForURL(
-            url,
+            url!,
             completionBlock: { (pageTitle: String?, error: NSError?) in
                 
                 XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! == expectedResult)
@@ -90,12 +90,12 @@ class HipChatStringParserFetchingUrlLinksTests: XCTestCase {
             }
         )
         
-        waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval) { error in
+        waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval, handler: { (error: NSError?) in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
             }
             task.cancel()
-        }
+        })
     }
     
     func testPageTitleFetchingWithAtlassianTestCase4() {
@@ -106,7 +106,7 @@ class HipChatStringParserFetchingUrlLinksTests: XCTestCase {
         let expectation = expectationWithDescription("GET \(url)")
         
         let task = parser!.pageTitleForURL(
-            url,
+            url!,
             completionBlock: { (pageTitle: String?, error: NSError?) in
                 
                 XCTAssertTrue(error == nil && pageTitle != nil && pageTitle! == expectedResult)
@@ -119,11 +119,11 @@ class HipChatStringParserFetchingUrlLinksTests: XCTestCase {
             }
         )
         
-        waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval) { error in
+        waitForExpectationsWithTimeout(task.originalRequest!.timeoutInterval, handler: { (error: NSError?) in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
             }
             task.cancel()
-        }
+        })
     }
 }
