@@ -62,7 +62,7 @@ class HipChatStringParserDictionaryTests: XCTestCase {
         }
     }
     
-    func testDictinoaryWithSimpleStringEmoticonsOnly1() {
+    func testDictionaryWithSimpleStringEmoticonsOnly1() {
         let inputString = "(jonsnow) is still dead."
         let expectedDict = [kHCParserDictionaryEmoticonsKey: ["jonsnow"]]
         let parserResults = parser!.dictionaryFromString(inputString)
@@ -70,7 +70,7 @@ class HipChatStringParserDictionaryTests: XCTestCase {
         XCTAssertTrue(NSDictionary(dictionary: parserResults).isEqualToDictionary(NSDictionary(dictionary: expectedDict) as [NSObject : AnyObject]))
     }
     
-    func testDictinoaryWithCombinedStringOfMentionsAndEmoticons1() {
+    func testDictionaryWithCombinedStringOfMentionsAndEmoticons1() {
         let inputString = "@jonsnow looks like this (jonsnow). He knows nothing."
         let expectedDict = [
             kHCParserDictionaryMentionsKey: ["jonsnow"],
@@ -89,7 +89,7 @@ class HipChatStringParserDictionaryTests: XCTestCase {
         XCTAssertTrue(NSDictionary(dictionary: parserResults).isEqualToDictionary(NSDictionary(dictionary: expectedDict) as [NSObject : AnyObject]))
     }
     
-    func testDictinoaryWithCombinedStringOfMentionsAndEmoticons2() {
+    func testDictionaryWithCombinedStringOfMentionsAndEmoticons2() {
         let inputString = "Hey @jimmyk, wanna grab a (coffee)?"
         let expectedDict = [
             kHCParserDictionaryMentionsKey: ["jimmyk"],
@@ -108,7 +108,7 @@ class HipChatStringParserDictionaryTests: XCTestCase {
         XCTAssertTrue(NSDictionary(dictionary: parserResults).isEqualToDictionary(NSDictionary(dictionary: expectedDict) as [NSObject : AnyObject]))
     }
     
-    func testDictinoaryWithCombinedStringOfMentionsAndEmoticonsAndLinksWithoutTitle1() {
+    func testDictionaryWithCombinedStringOfMentionsAndEmoticonsAndLinksWithoutTitle1() {
         // Note: This test case does not put in consideration of the page title.
         let inputString = "Hey @jimmyk, I found the best (coffee) at http://thegrounds.com.au/"
         let expectedDict = [
@@ -192,7 +192,7 @@ class HipChatStringParserDictionaryTests: XCTestCase {
         })
     }
     
-    func testAsyncDictinoaryWithCombinedStringOfMentionsAndEmoticonsButLinkThatDoesNotResolve() {
+    func testAsyncDictionaryWithCombinedStringOfMentionsAndEmoticonsButLinkThatDoesNotResolve() {
         let inputString = "Sorry @jimmyk, I can't load the site http://www.atlassiannn.com"
         let expectedDictWithoutPageTitle = [
             kHCParserDictionaryMentionsKey: ["jimmyk"],
@@ -242,7 +242,7 @@ class HipChatStringParserDictionaryTests: XCTestCase {
     
     // MARK: - Test for valid cases with fetching
     
-    func testAsyncDictinoaryWithCombinedStringOfMentionsAndEmoticonsAndLinks1() {
+    func testAsyncDictionaryWithCombinedStringOfMentionsAndEmoticonsAndLinks1() {
         let inputString = "Hey @jimmyk, I found the best (coffee) at http://thegrounds.com.au/"
         let expectedDictWithoutPageTitle = [
             kHCParserDictionaryMentionsKey: ["jimmyk"],
@@ -292,7 +292,7 @@ class HipChatStringParserDictionaryTests: XCTestCase {
         }
     }
     
-    func testAsyncDictinoaryWithCombinedStringOfMultipleLinks() {
+    func testAsyncDictionaryWithCombinedStringOfMultipleLinks() {
         let inputString = " http://thegrounds.com.au/ http://www.feliway.com/au/Feliway"
         let expectedDictWithoutPageTitle = [
             kHCParserDictionaryLinksKey: [
