@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum InputStringListSection: Int {
+    case PreDefined = 0
+    case Custom = 1
+}
+
 class InputStringListViewController: UITableViewController {
     
     static let identifier = "InputStringListViewController"
@@ -39,9 +44,9 @@ class InputStringListViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0:
+        case InputStringListSection.PreDefined.rawValue:
             return inputStrings.count
-        case 1:
+        case InputStringListSection.Custom.rawValue:
             return 1
         default:
             return 0
@@ -50,9 +55,9 @@ class InputStringListViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
-        case 0:
+        case InputStringListSection.PreDefined.rawValue:
             return "Atlassian test cases"
-        case 1:
+        case InputStringListSection.Custom.rawValue:
             return "Enter your own"
         default:
             return nil
@@ -62,9 +67,9 @@ class InputStringListViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         switch indexPath.section {
-        case 0:
+        case InputStringListSection.PreDefined.rawValue:
             return self.tableView(tableView, preDefinedInputStringCellForRowAtIndexPath: indexPath)
-        case 1:
+        case InputStringListSection.Custom.rawValue:
             return self.tableView(tableView, customInputStringCellForRowAtIndexPath: indexPath)
         default:
             return self.tableView(tableView, fallbackCellForRowAtIndexPath: indexPath)
