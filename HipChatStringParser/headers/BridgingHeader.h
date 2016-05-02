@@ -20,7 +20,8 @@
 #import "HCURLFetchingStringParser.h"
 
 // Libraries
-#import "GDataXMLNode.h"
+
+//#import "GDataXMLNode.h"      // For some reason when compiling for real device Xcode fails to locate the GDataXMLNode.h file, but given that we do not use this library in the Swift area, there is no need to import such header into the bridging header.  So it's best to leave it out.
 //#import <GDataXML-HTML/GDataXMLNode.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <Reachability/Reachability.h>
