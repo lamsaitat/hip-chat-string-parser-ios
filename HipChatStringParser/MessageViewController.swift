@@ -20,8 +20,11 @@ class MessageViewController: UIViewController {
         let _parser = HCParserFactory.urlFetchingParser()
         return _parser
     }()
-    
-    let reachability: Reachability = Reachability.reachabilityForInternetConnection()
+
+    var reachability: Reachability = {
+        let _reachability = Reachability.reachabilityForInternetConnection()
+        return _reachability
+    }()
     
     var message: HCMessage?
     
