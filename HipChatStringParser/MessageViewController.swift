@@ -44,7 +44,7 @@ class MessageViewController: UIViewController {
     private func fetchPageTitleIfRequired() {
         if message?.links.count > 0 {
             
-            if reachability.isReachableViaWiFi() || reachability.isReachableViaWiFi() {
+            if reachability.isReachableViaWiFi() || reachability.isReachableViaWWAN() {
             
                 let hud = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().windows.first, animated: true)
                 hud.labelText = "Loading..."
