@@ -10,7 +10,6 @@
 		59EC4961CBE9A2730B1C6161 /* Pods_HipChatStringParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D040128B8A3A03188ACB5C3 /* Pods_HipChatStringParser.framework */; };
 		BC2064BDB4C066490C1FAAB1 /* Pods_HipChatStringParserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A875E3B635F3F13C18818D /* Pods_HipChatStringParserTests.framework */; };
 		CB0049781CD4A6A200594CEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049771CD4A6A200594CEE /* AppDelegate.swift */; };
-		CB00497A1CD4A6A200594CEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049791CD4A6A200594CEE /* ViewController.swift */; };
 		CB00497D1CD4A6A200594CEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB00497B1CD4A6A200594CEE /* Main.storyboard */; };
 		CB00497F1CD4A6A200594CEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB00497E1CD4A6A200594CEE /* Assets.xcassets */; };
 		CB0049821CD4A6A200594CEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB0049801CD4A6A200594CEE /* LaunchScreen.storyboard */; };
@@ -65,7 +64,6 @@
 		98CD5B2F6405C76C95E0F75A /* Pods-HipChatStringParserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HipChatStringParserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HipChatStringParserTests/Pods-HipChatStringParserTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB0049741CD4A6A200594CEE /* HipChatStringParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HipChatStringParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB0049771CD4A6A200594CEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CB0049791CD4A6A200594CEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CB00497C1CD4A6A200594CEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB00497E1CD4A6A200594CEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB0049811CD4A6A200594CEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 				CB00499C1CD4A73100594CEE /* sources */,
 				CB0049971CD4A6C700594CEE /* headers */,
 				CB0049771CD4A6A200594CEE /* AppDelegate.swift */,
-				CB0049791CD4A6A200594CEE /* ViewController.swift */,
 				CB0049EF1CD65D8A00594CEE /* CustomInputStringCell.swift */,
 				CB0049ED1CD6592500594CEE /* InputStringListViewController.swift */,
 				CB0049F11CD668A300594CEE /* MessageViewController.swift */,
@@ -468,7 +465,6 @@
 				CBFFC6111CD515280029D560 /* HCURLFetchingStringParser.m in Sources */,
 				CB0049A11CD4A91D00594CEE /* HCStubStringParser.m in Sources */,
 				CB0049EE1CD6592500594CEE /* InputStringListViewController.swift in Sources */,
-				CB00497A1CD4A6A200594CEE /* ViewController.swift in Sources */,
 				CB0049D71CD623B900594CEE /* HCLink.m in Sources */,
 				CB0049CE1CD603D000594CEE /* HCConstants.m in Sources */,
 				CB0049F01CD65D8A00594CEE /* CustomInputStringCell.swift in Sources */,
