@@ -21,7 +21,7 @@ class InputStringListViewController: UITableViewController {
     static let preDefinedInputStringCellIdentifier = "InputStringCell"
     
     lazy var parser: HCParser = {
-        let _parser = HCParserFactory.urlFetchingParser()
+        let _parser = HCParserFactory.parser()
         return _parser
     }()
     

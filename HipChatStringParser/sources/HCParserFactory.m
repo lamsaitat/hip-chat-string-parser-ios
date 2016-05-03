@@ -16,7 +16,7 @@
 @implementation HCParserFactory
 
 + (id<HCParser>)parser {
-    return [self.class stringParser];
+    return [self.class urlFetchingParser];
 }
 
 + (id<HCParser>)stubParser {
