@@ -128,6 +128,10 @@ class HipChatStringParserEmoticonsTests: XCTestCase {
                 let parsedResults = parser!.emoticonsFromString(inputString)
                 XCTAssertTrue(parsedResults.count == expectedResultsCount)
                 XCTAssertFalse(parsedResults.count == 210)
+                
+                XCTAssertFalse(parsedResults.contains("challengeaccepted"))
+                XCTAssertFalse(parsedResults.contains("iseewhatyoudidthere"))
+                
             } catch _ {
                 XCTAssert(false, "Test failed due to failing to read the test file into string object")
             }
