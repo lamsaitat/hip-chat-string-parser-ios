@@ -48,26 +48,29 @@ class MessageViewController: UIViewController {
         if message?.links.count > 0 {
             
             if reachability.isReachableViaWiFi() || reachability.isReachableViaWWAN() {
-            
-                let hud = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().windows.first, animated: true)
-                hud.labelText = "Loading..."
-                parser.fetchPageTitlesWithMessage!(
-                    message,
-                    completionBlock: { (returningMessage: HCMessage!, error: NSError?) in
-                        
-                        if error == nil {
-                            self.message = returningMessage
+                if parser.respondsToSelector(#selector(HCParser.fetchPageTitlesWithMessage(_:completionBlock:))) {
+                    let hud = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().windows.first, animated: true)
+                    hud.labelText = "Loading..."
+                    parser.fetchPageTitlesWithMessage!(
+                        message,
+                        completionBlock: { (returningMessage: HCMessage!, error: NSError?) in
+                            
+                            if error == nil {
+                                self.message = returningMessage
+                                
+                                dispatch_async(dispatch_get_main_queue(), {
+                                    self.updateContentText()
+                                })
+                            }
                             
                             dispatch_async(dispatch_get_main_queue(), {
-                                self.updateContentText()
+                                hud.hide(true)
                             })
                         }
-                        
-                        dispatch_async(dispatch_get_main_queue(), {
-                            hud.hide(true)
-                        })
-                    }
-                )
+                    )
+                } else {
+                    print("fetchPageTitlesWithMessage not implemented for this parser")
+                }
             } else {
                 let alert = UIAlertController(title: "No internet connection", message: "Cannot fetch page title when there is no internet.", preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: nil))
