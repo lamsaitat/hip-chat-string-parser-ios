@@ -43,6 +43,7 @@
 		CB0049EE1CD6592500594CEE /* InputStringListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049ED1CD6592500594CEE /* InputStringListViewController.swift */; };
 		CB0049F01CD65D8A00594CEE /* CustomInputStringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049EF1CD65D8A00594CEE /* CustomInputStringCell.swift */; };
 		CB0049F21CD668A300594CEE /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0049F11CD668A300594CEE /* MessageViewController.swift */; };
+		CBEEA9301CD90895008D31B0 /* HCMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEEA92F1CD90895008D31B0 /* HCMessageViewModel.swift */; };
 		CBFFC6111CD515280029D560 /* HCURLFetchingStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFFC6101CD515280029D560 /* HCURLFetchingStringParser.m */; };
 		CBFFC6121CD515280029D560 /* HCURLFetchingStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFFC6101CD515280029D560 /* HCURLFetchingStringParser.m */; };
 		CBFFC6141CD51B090029D560 /* HipChatStringParserFetchingUrlLinksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFFC6131CD51B090029D560 /* HipChatStringParserFetchingUrlLinksTests.swift */; };
@@ -99,6 +100,7 @@
 		CB0049ED1CD6592500594CEE /* InputStringListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputStringListViewController.swift; sourceTree = "<group>"; };
 		CB0049EF1CD65D8A00594CEE /* CustomInputStringCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputStringCell.swift; sourceTree = "<group>"; };
 		CB0049F11CD668A300594CEE /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		CBEEA92F1CD90895008D31B0 /* HCMessageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMessageViewModel.swift; sourceTree = "<group>"; };
 		CBFFC60F1CD515280029D560 /* HCURLFetchingStringParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCURLFetchingStringParser.h; sourceTree = "<group>"; };
 		CBFFC6101CD515280029D560 /* HCURLFetchingStringParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCURLFetchingStringParser.m; sourceTree = "<group>"; };
 		CBFFC6131CD51B090029D560 /* HipChatStringParserFetchingUrlLinksTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChatStringParserFetchingUrlLinksTests.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				CB0049EF1CD65D8A00594CEE /* CustomInputStringCell.swift */,
 				CB0049ED1CD6592500594CEE /* InputStringListViewController.swift */,
 				CB0049F11CD668A300594CEE /* MessageViewController.swift */,
+				CBEEA92F1CD90895008D31B0 /* HCMessageViewModel.swift */,
 				CB00497B1CD4A6A200594CEE /* Main.storyboard */,
 				CB00497E1CD4A6A200594CEE /* Assets.xcassets */,
 				CB0049801CD4A6A200594CEE /* LaunchScreen.storyboard */,
@@ -471,6 +474,7 @@
 				CB0049D31CD623AA00594CEE /* HCMessage.m in Sources */,
 				CB0049F21CD668A300594CEE /* MessageViewController.swift in Sources */,
 				CB0049781CD4A6A200594CEE /* AppDelegate.swift in Sources */,
+				CBEEA9301CD90895008D31B0 /* HCMessageViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

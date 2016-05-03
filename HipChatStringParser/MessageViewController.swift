@@ -26,13 +26,31 @@ class MessageViewController: UIViewController {
         return _reachability
     }()
     
-    var message: HCMessage?
+    var message: HCMessage? {
+        didSet {
+            if message != nil {
+                if messageViewModel == nil {
+                    messageViewModel = HCMessageViewModel(message: message!)
+                } else {
+                    messageViewModel!.message = message!
+                }
+            } else {
+                messageViewModel = nil
+            }
+        }
+    }
+    
+    var messageViewModel: HCMessageViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contentTextView.text = displayString(message)
-        
+        if message != nil {
+            if messageViewModel == nil {
+                messageViewModel = HCMessageViewModel(message: message!)
+            }
+            contentTextView.text = messageViewModel!.displayString()
+        }
         fetchPageTitleIfRequired()
     }
 
@@ -41,7 +59,7 @@ class MessageViewController: UIViewController {
     }
     
     private func updateContentText() {
-        contentTextView.text = displayString(message)
+        contentTextView.text = messageViewModel?.displayString()
     }
     
     private func fetchPageTitleIfRequired() {
@@ -77,28 +95,5 @@ class MessageViewController: UIViewController {
                 presentViewController(alert, animated: true, completion: nil)
             }
         }
-    }
-
-    private func displayString(message: HCMessage?) -> String? {
-        if message == nil {
-            return nil
-        }
-        
-        var displayString = ""
-        
-        if message!.chatMessage.isEmpty == false {
-            displayString += "Input String:\n\(message!.chatMessage)\n\n"
-        }
-        
-        let jsonString = message!.jsonString
-        
-        if jsonString.isEmpty == false {
-            displayString += "JSON output:\n\(jsonString)\n"
-        }
-        
-        if displayString.isEmpty {
-            return nil
-        }
-        return displayString
     }
 }
